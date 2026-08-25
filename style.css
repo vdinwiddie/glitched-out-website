@@ -1,0 +1,270 @@
+/* ========================================
+   Global
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #111;
+    color: white;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.button {
+    display: inline-block;
+
+    padding: 12px 28px;
+    border: 1px solid #8a8a8a;
+    border-radius: 6px;
+
+    color: #8a8a8a;
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+/* Blue Button */
+
+.button-blue:hover {
+    background: linear-gradient(
+        to bottom,
+        #2d5663 0%,
+        #1d414b 45%,
+        #142f38 55%,
+        #1a3a44 100%
+    );
+
+    color: white;
+    border-color: #3f6975;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Red Button */
+
+.button-red:hover {
+    background: linear-gradient(
+        to bottom,
+        #651f1f 0%,
+        #491515 45%,
+        #3a1010 55%,
+        #461313 100%
+    );
+
+    color: white;
+    border-color: #713030;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Discography Button */
+
+.button-discography {
+    justify-self: end;
+    align-self: center;
+
+    font-size: 36px;
+}
+
+/* Merch Button */
+
+.button-merch {
+    align-self: flex-end;
+
+    margin-top: 20px;
+    
+    font-size: 36px;
+    padding: 16px 36px;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.site-header {
+    display: grid;
+
+    grid-template-columns: 0.5fr 2fr 1fr;
+    align-items: center;
+
+    padding: 20px 50px;
+    gap: 30px;
+
+    background-color: #142f38;
+}
+
+.header-left {
+    justify-self: center;
+}
+
+.header-center {
+    justify-self: center;
+}
+
+.header-right {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    margin-left: 80px;
+}
+
+.logo img {
+    display: block;
+    width: 120px;
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+    gap: 80px;
+
+    font-size: 28px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+.social-links img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+}
+
+/* ========================================
+   Latest Release
+======================================== */
+
+.latest-release {
+    display: flex;
+    align-items: stretch;
+
+    padding: 140px;
+    gap: 40px;
+}
+
+.release-artwork {
+    width: 50%;
+}
+
+.release-artwork img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.release-info {
+    display: grid;
+    grid-template-rows: 35% 35% 30%;
+    align-items: center;
+
+    width: 50%;
+}
+
+.release-heading {
+    width: 100%;
+}
+
+.release-title {
+    margin: 40px 20px 20px;
+
+    font-size: 60px;
+}
+
+.release-date {
+    width: 100%;
+    margin: 0;
+
+    font-size: 28px;
+    text-align: right;
+}
+
+.listen-section {
+    width: 100%;
+    text-align: center;
+}
+
+.listen-section h2 {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    font-size: 36px;
+}
+
+.streaming-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    font-size: 20px;
+}
+
+/* ========================================
+   Merch
+======================================== */
+
+.merch-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 80px 140px;
+}
+
+.merch-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    font-size: 60px;
+}
+
+.merch-preview {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
