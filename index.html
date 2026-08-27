@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Glitched Out</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Dongle&family=Special+Elite&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <!-- Site Header -->
     <header class="site-header">
+        <a href="index.html" class="logo">
+            <img src="Images/HomePage/Header/logo.svg" alt="Glitched Out">
+        </a>
 
-        <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="Images/HomePage/Header/logo.svg" alt="Glitched Out">
-            </a>
-        </div>
+        <nav class="main-nav" aria-label="Primary navigation">
+            <a href="#">Discography</a>
+            <a href="#">Shows</a>
+            <a href="#">Photos & Videos</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
 
-        <div class="header-center">
-            <nav class="main-nav">
-                <a href="#">Discography</a>
-                <a href="#">Shows</a>
-                <a href="#">Photos & Videos</a>
-                <a href="#">About Us</a>
-            </nav>
-        </div>
-
-        <div class="header-right">
-
+        <div class="header-actions">
             <div class="social-links">
                 <a href="https://www.instagram.com/glitched_out_chicago/">
                     <img src="Images/HomePage/Header/ig.svg" alt="Instagram">
@@ -57,74 +53,202 @@
                 </a>
             </div>
 
-            <a href="#" class="button button-red">SHOP</a>
-
+            <a href="#" class="button button-red shop-button">SHOP</a>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
-
         <!-- Latest Release -->
         <section class="latest-release">
-
             <div class="release-artwork">
-                <img src="Images/HomePage/LatestRelease/album_cover.jpg" alt="Latest Release">
+                <img src="Images/HomePage/LatestRelease/album_cover.jpg" alt="Album cover for The Physical Properties of Standing Still">
             </div>
 
             <div class="release-info">
-
-                <div class="release-heading">
-                    <h1 class="release-title">
-                        The Physical Properties of Standing Still
-                    </h1>
-
-                    <p class="release-date">
-                        Out August 16, 2026
-                    </p>
+                <div>
+                    <h1 class="release-title">The Physical Properties of Standing Still</h1>
+                    <p class="release-date">Out August 16, 2026</p>
                 </div>
 
                 <div class="listen-section">
                     <h2>Listen now on...</h2>
 
                     <div class="streaming-links">
-                        <a class="button button-blue" href="https://open.spotify.com/artist/1mYSl7MkjKWYck7fI6GbTd?si=UxX4x3pMTj-hhR8BFOrp0A">
-                            SPOTIFY
-                        </a>
-
-                        <a class="button button-blue" href="https://music.youtube.com/channel/UC3-S2ekIVpy3KFDjjneu7nQ?si=ELe-DXlDLmwOdExn">
-                            YOUTUBE MUSIC
-                        </a>
-
-                        <a class="button button-blue" href="https://music.apple.com/us/artist/glitched-out/1728156264">
-                            APPLE MUSIC
-                        </a>
-
-                        <a class="button button-blue" href="https://link.deezer.com/s/34d7XraWxYM3XHabTfGpq">
-                            DEEZER
-                        </a>
+                        <a class="button button-blue streaming-button" href="https://open.spotify.com/artist/1mYSl7MkjKWYck7fI6GbTd?si=UxX4x3pMTj-hhR8BFOrp0A">SPOTIFY</a>
+                        <a class="button button-blue streaming-button" href="https://music.youtube.com/channel/UC3-S2ekIVpy3KFDjjneu7nQ?si=ELe-DXlDLmwOdExn">YOUTUBE MUSIC</a>
+                        <a class="button button-blue streaming-button" href="https://music.apple.com/us/artist/glitched-out/1728156264">APPLE MUSIC</a>
+                        <a class="button button-blue streaming-button" href="https://link.deezer.com/s/34d7XraWxYM3XHabTfGpq">DEEZER</a>
                     </div>
                 </div>
 
-                <a class="button button-red button-discography" href="#">
-                    Check out our discography!
-                </a>
-
+                <a class="button button-red button-large release-cta" href="#">Check out our discography!</a>
             </div>
-
         </section>
 
+        <div class="section-divider" aria-hidden="true">
+            <svg class="divider-zigzag" viewBox="0 0 40 14">
+                <polyline points="0,7 12,7 17,2 23,12 28,7 40,7" />
+            </svg>
+        </div>
+
         <!-- Merch -->
-         <section class="merch-section">
+        <section class="home-section">
+            <h2 class="section-title">Merch</h2>
 
-            <h2 class="merch-title">Merch</h2>
+            <img class="section-media" src="Images/HomePage/Merch/merchbanner.jpg" alt="Merch preview">
 
-            <img class="merch-preview" src="Images/HomePage/Merch/merchbanner.jpg" alt="Merch preview">
+            <a class="button button-red button-large section-cta" href="#">Check out our merch!</a>
+        </section>
 
-            <a class="button button-red button-merch" href="#">Check out our merch!</a>
+        <div class="section-divider" aria-hidden="true">
+            <svg class="divider-zigzag" viewBox="0 0 40 14">
+                <polyline points="0,7 12,7 17,2 23,12 28,7 40,7" />
+            </svg>
+        </div>
 
-         </section>
+        <!-- Upcoming Shows -->
+        <section class="home-section">
+            <h2 class="section-title">Upcoming Shows</h2>
+
+            <div class="show-list">
+                <div class="show">
+                    <div class="show-date-venue">
+                        <p class="show-date">October 17, 2026</p>
+                        <p class="show-venue">Kombucha Club</p>
+                    </div>
+
+                    <div class="show-location">
+                        <p>Chicago, IL</p>
+                    </div>
+
+                    <div class="show-tickets">
+                        <a class="button button-blue" href="#">Tickets</a>
+                    </div>
+                </div>
+
+                <div class="show">
+                    <div class="show-date-venue">
+                        <p class="show-date">October 21, 2026</p>
+                        <p class="show-venue">Not A Fake Venue</p>
+                    </div>
+
+                    <div class="show-location">
+                        <p>Cumming, GA</p>
+                    </div>
+
+                    <div class="show-tickets">
+                        <a class="button button-blue" href="#">Tickets</a>
+                    </div>
+                </div>
+
+                <div class="show">
+                    <div class="show-date-venue">
+                        <p class="show-date">September 11, 2026</p>
+                        <p class="show-venue">Definitely Real Venue LLC</p>
+                    </div>
+
+                    <div class="show-location">
+                        <p>Weiner, AR</p>
+                    </div>
+
+                    <div class="show-tickets">
+                        <a class="button button-blue" href="#">Tickets</a>
+                    </div>
+                </div>
+
+                <div class="show">
+                    <div class="show-date-venue">
+                        <p class="show-date">Cocktober 69th, 42026</p>
+                        <p class="show-venue">Maple Syrup club or something idk</p>
+                    </div>
+
+                    <div class="show-location">
+                        <p>Edmonton, AB</p>
+                    </div>
+
+                    <div class="show-tickets">
+                        <a class="button button-blue" href="#">Tickets</a>
+                    </div>
+                </div>
+
+                <div class="show">
+                    <div class="show-date-venue">
+                        <p class="show-date">Boner Boner, Boner</p>
+                        <p class="show-venue">Boner</p>
+                    </div>
+
+                    <div class="show-location">
+                        <p>Boner, BN</p>
+                    </div>
+
+                    <div class="show-tickets">
+                        <a class="button button-blue" href="#">Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="button button-red button-large section-cta" href="#">Check out all upcoming shows!</a>
+        </section>
+
+        <div class="section-divider" aria-hidden="true">
+            <svg class="divider-zigzag" viewBox="0 0 40 14">
+                <polyline points="0,7 12,7 17,2 23,12 28,7 40,7" />
+            </svg>
+        </div>
+
+        <!-- Photos & Videos -->
+        <section class="home-section">
+            <h2 class="section-title">Photos and Videos</h2>
+
+            <img class="section-media" src="Images/HomePage/PhotosAndVideos/Banner.jpg" alt="Photos and Videos">
+
+            <a class="button button-red button-large section-cta" href="#">Check out our photos and videos!</a>
+        </section>
+
+        <div class="section-divider" aria-hidden="true">
+            <svg class="divider-zigzag" viewBox="0 0 40 14">
+                <polyline points="0,7 12,7 17,2 23,12 28,7 40,7" />
+            </svg>
+        </div>
+
+        <!-- About Us -->
+        <section class="home-section">
+            <div class="biography">
+                <div class="bio-text">
+                    <h2 class="section-title">About Us</h2>
+
+                    <p>
+                        Four score and seven years ago our fathers brought forth on this
+                        continent a new nation, conceived in liberty, and dedicated to the
+                        proposition that all men are created equal. “Now we are engaged in
+                        a great civil war, testing whether that nation, or any nation so
+                        conceived and so dedicated, can long endure...
+                    </p>
+                </div>
+
+                <img class="bio-frame" src="Images/HomePage/AboutUs/frame.png" alt="">
+            </div>
+
+            <a class="button button-red button-large section-cta" href="#">Check out our About Us page!</a>
+        </section>
+
+        <div class="section-divider" aria-hidden="true">
+            <svg class="divider-zigzag" viewBox="0 0 40 14">
+                <polyline points="0,7 12,7 17,2 23,12 28,7 40,7" />
+            </svg>
+        </div>
+
+        <!-- Contact -->
+        <section class="home-section contact">
+            <h2 class="section-title contact-title">Contact Us!</h2>
+
+            <a href="mailto:glitchedoutchicago@gmail.com">glitchedoutchicago@gmail.com</a>
+        </section>
     </main>
 
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Glitched Out. All rights reserved.</p>
+    </footer>
 </body>
 </html>
