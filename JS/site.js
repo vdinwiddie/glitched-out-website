@@ -79,9 +79,9 @@
             artwork: "Releases/EP.ThePhysicalPropertiesOfStandingStill/AlbumArtwork.jpg",
             artworkAlt: "Album artwork for The Physical Properties of Standing Still",
             tracks: [
-                { number: "01", title: "Momentum", file: "01.Momentum.wav" },
-                { number: "02", title: "Inertia", file: "02.Inertia.wav" },
-                { number: "03", title: "Gravity", file: "03.Gravity.wav" },
+                { number: "01", title: "Momentum", file: "01.Momentum.mp3" },
+                { number: "02", title: "Inertia", file: "02.Inertia.mp3" },
+                { number: "03", title: "Gravity", file: "03.Gravity.mp3" },
             ],
             streamingLinks: [
                 {
@@ -114,7 +114,7 @@
             artwork: "Releases/Single.Covalence/AlbumArtwork.jpg",
             artworkAlt: "Album artwork for Covalence",
             tracks: [
-                { number: "01", title: "Covalence", file: "01.Covalence.wav" },
+                { number: "01", title: "Covalence", file: "01.Covalence.mp3" },
             ],
             streamingLinks: [
                 {
@@ -889,7 +889,7 @@
             `<h2>${escapeHtml(track.title)}</h2>`,
             "</div>",
             '<audio controls preload="metadata">',
-            `<source src="${escapeHtml(audioPath)}" type="audio/wav">`,
+            `<source src="${escapeHtml(audioPath)}" type="audio/mpeg">`,
             `Your browser does not support embedded audio for ${escapeHtml(trackTitle)}.`,
             "</audio>",
             "</article>",
