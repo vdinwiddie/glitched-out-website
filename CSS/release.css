@@ -1,0 +1,215 @@
+/* ========================================
+   Release Page
+======================================== */
+
+.release-page {
+    width: min(100%, var(--content-max));
+    margin-inline: auto;
+    padding:
+        clamp(3.5rem, 6vw, 5rem)
+        var(--page-gutter)
+        clamp(5rem, 8vw, 7rem);
+}
+
+/* ========================================
+   Release Header
+======================================== */
+
+.release-hero {
+    display: grid;
+    justify-items: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+
+    margin-bottom: clamp(2.25rem, 5vw, 4rem);
+}
+
+.release-page-title {
+    width: min(100%, 50rem);
+    margin: 0;
+
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    line-height: 1.08;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.release-page-date {
+    justify-self: end;
+
+    margin: 0;
+    padding-right: clamp(0rem, 8vw, 10rem);
+
+    color: #c9c9c9;
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
+}
+
+/* ========================================
+   Artwork / Audio
+======================================== */
+
+.release-layout {
+    display: grid;
+    grid-template-columns: minmax(14rem, 0.9fr) minmax(18rem, 1.15fr);
+    align-items: start;
+    gap: clamp(1.5rem, 4vw, 5rem);
+
+    margin-inline: auto;
+    width: min(100%, 78rem);
+}
+
+.release-artwork-large {
+    width: 100%;
+}
+
+.release-artwork-large img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    border-radius: 0.375rem;
+    box-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.release-audio {
+    display: grid;
+    gap: clamp(0.75rem, 1.25vw, 1rem);
+
+    min-width: 0;
+}
+
+.release-track-player {
+    display: grid;
+    gap: 0.625rem;
+
+    padding: clamp(0.75rem, 1.4vw, 1rem);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.5rem;
+
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 0.75rem 1.5rem rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.release-track-heading {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.release-track-heading span {
+    color: #f6c945;
+    font-family: var(--font-display);
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+}
+
+.release-track-heading h2 {
+    margin: 0;
+
+    font-size: clamp(1rem, 1.5vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.release-track-player audio {
+    width: 100%;
+}
+
+/* ========================================
+   Streaming Links
+======================================== */
+
+.release-listen-more {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+
+    margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.release-listen-more h2 {
+    margin: 0;
+
+    font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.release-streaming-links {
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(0.5rem, 1vw, 0.875rem);
+
+    width: min(92%, 72rem);
+}
+
+.release-streaming-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: clamp(2.25rem, 3.5vw, 3rem);
+    padding-inline: clamp(0.5rem, 1vw, 0.875rem);
+
+    font-size: clamp(0.85rem, 1.08vw, 1.05rem);
+    letter-spacing: 0.04rem;
+}
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ========================================
+   Release Responsive Layout
+======================================== */
+
+@media (max-width: 56.25rem) {
+    .release-page-date {
+        justify-self: center;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .release-layout {
+        grid-template-columns: 1fr;
+        align-items: start;
+        width: min(100%, 42rem);
+    }
+
+    .release-listen-more {
+        grid-template-columns: 1fr;
+        justify-items: stretch;
+        width: min(100%, 42rem);
+        margin-inline: auto;
+    }
+
+    .release-streaming-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+}
+
+@media (max-width: 30rem) {
+    .release-streaming-links {
+        grid-template-columns: 1fr;
+    }
+}

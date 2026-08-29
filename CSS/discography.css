@@ -1,49 +1,13 @@
 /* ========================================
-   Discography Variables
-======================================== */
-
-:root {
-    --color-arrow-rgb: 120, 120, 120;
-    --color-arrow-hover-rgb: 255, 255, 255;
-
-    --carousel-edge-gutter: 3vw;
-    --release-card-width: clamp(15rem, calc((100vw - 8.75rem) / 3.6), 30rem);
-}
-
-/* ========================================
    Discography Page
 ======================================== */
 
 .discography {
+    --carousel-card-width: clamp(15rem, calc((100vw - 8.75rem) / 3.6), 30rem);
+    --carousel-hover-scale: 1.04;
+
     padding: 5rem 0 6.25rem;
     overflow-x: clip;
-}
-
-.page-title {
-    position: relative;
-
-    margin: 0 0 5rem;
-    padding-bottom: 1.5625rem;
-
-    font-size: clamp(2.625rem, 5vw, 4.5rem);
-    text-align: center;
-}
-
-.page-title::after {
-    content: "";
-    position: absolute;
-
-    left: 50%;
-    bottom: 0.5rem;
-
-    width: clamp(16.25rem, 28vw, 24rem);
-    height: 1.125rem;
-
-    transform: translateX(-50%);
-
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 5 C25 16 75 15 130 10 C185 5 230 3 258 8' fill='none' stroke='%238a8a8a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
 }
 
 /* ========================================
@@ -54,62 +18,18 @@
     margin-bottom: 5.625rem;
 }
 
+.release-section:last-child {
+    margin-bottom: 0;
+}
+
 .release-section-title {
     margin: 0 5% 1.875rem;
     font-size: clamp(1.75rem, 3vw, 2.625rem);
 }
 
 /* ========================================
-   Carousel
-======================================== */
-
-.release-carousel {
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-}
-
-.release-track {
-    display: flex;
-    flex: 1;
-    gap: 1.75rem;
-
-    padding: 1.25rem 0 1.5625rem;
-
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.release-track::-webkit-scrollbar {
-    display: none;
-}
-
-/* ========================================
    Release Cards
 ======================================== */
-
-.release-card {
-    flex: 0 0 var(--release-card-width);
-
-    color: var(--color-text);
-    text-decoration: none;
-
-    transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
-}
-
-.release-card:first-child {
-    margin-left: var(--carousel-edge-gutter);
-}
-
-.release-card:last-child {
-    margin-right: var(--carousel-edge-gutter);
-}
 
 .release-card img {
     width: 100%;
@@ -124,138 +44,12 @@
     text-align: center;
 }
 
-.release-card:focus-visible,
-.carousel-arrow:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 4px;
-}
-
-/* ========================================
-   Carousel Arrows
-======================================== */
-
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-
-    width: clamp(4.5rem, 7vw, 6.25rem);
-    height: clamp(6rem, 8.5vw, 7.5rem);
-
-    border: 0;
-
-    color: var(--color-text);
-    font-size: clamp(2rem, 2.5vw, 2.25rem);
-
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
-    text-shadow:
-        0 0 4px rgba(0, 0, 0, 0.9),
-        0 0 8px rgba(0, 0, 0, 0.6);
-
-    opacity: 0.7;
-    transform: translateY(-50%);
-    isolation: isolate;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        border-radius 0.2s ease;
-}
-
-.carousel-arrow::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    opacity: 0;
-    pointer-events: none;
-
-    transition: opacity 0.25s ease;
-}
-
-.carousel-arrow-left {
-    left: 0;
-    padding-left: clamp(1.25rem, 2vw, 1.875rem);
-
-    background: linear-gradient(
-        to right,
-        rgba(var(--color-arrow-rgb), 0.9) 0%,
-        rgba(var(--color-arrow-rgb), 0.8) 20%,
-        rgba(var(--color-arrow-rgb), 0) 100%
-    );
-
-    text-align: left;
-}
-
-.carousel-arrow-left::before {
-    border-radius: 0 3.75rem 3.75rem 0;
-    background: rgba(var(--color-arrow-hover-rgb), 0.45);
-}
-
-.carousel-arrow-right {
-    right: 0;
-    padding-right: clamp(1.25rem, 2vw, 1.875rem);
-
-    background: linear-gradient(
-        to left,
-        rgba(var(--color-arrow-rgb), 0.9) 0%,
-        rgba(var(--color-arrow-rgb), 0.8) 20%,
-        rgba(var(--color-arrow-rgb), 0) 100%
-    );
-
-    text-align: right;
-}
-
-.carousel-arrow-right::before {
-    border-radius: 3.75rem 0 0 3.75rem;
-    background: rgba(var(--color-arrow-hover-rgb), 0.65);
-}
-
-.carousel-arrow:active {
-    transform: translateY(calc(-50% + 3px)) scale(0.98);
-}
-
-@media (hover: hover) {
-    .release-card:hover {
-        transform: scale(1.04);
-        filter: brightness(1.08);
-    }
-
-    .carousel-arrow:hover {
-        opacity: 0.85;
-        transform: translateY(-50%) scale(1.05);
-    }
-
-    .carousel-arrow:hover::before {
-        opacity: 1;
-    }
-
-    .carousel-arrow-left:hover {
-        border-radius: 0 3.75rem 3.75rem 0;
-    }
-
-    .carousel-arrow-right:hover {
-        border-radius: 3.75rem 0 0 3.75rem;
-    }
-}
-
 /* ========================================
    Discography Responsive Layout
 ======================================== */
 
 @media (max-width: 40rem) {
-    :root {
-        --release-card-width: clamp(13.75rem, 72.5vw, 18.75rem);
-    }
-
-    .release-track {
-        gap: 1.25rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .release-track {
-        scroll-behavior: auto;
+    .discography {
+        --carousel-card-width: clamp(13.75rem, 72.5vw, 18.75rem);
     }
 }

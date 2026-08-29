@@ -3,11 +3,7 @@
 ======================================== */
 
 :root {
-    --color-parchment: #d8cfb8;
-    --color-parchment-line: #8c8068;
-
     --font-about-us: "Yesteryear", cursive;
-
     --section-padding: clamp(3rem, 5vw, 5rem);
 }
 
@@ -16,9 +12,11 @@
 ======================================== */
 
 .streaming-button {
+    padding: 0.3125rem 0.75rem;
     font-family: var(--font-button-alt);
-    font-size: 1.875rem;
-    letter-spacing: 0.125rem;
+    font-size: 1.125rem;
+    letter-spacing: 0.05rem;
+    white-space: nowrap;
 }
 
 /* ========================================
@@ -34,6 +32,20 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(2rem, 4vw, 4rem);
     align-items: stretch;
+}
+
+.release-artwork-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.release-artwork-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 0.5rem;
 }
 
 .release-artwork img {
@@ -68,6 +80,10 @@
     text-align: right;
 }
 
+.release-listen-button {
+    align-self: center;
+}
+
 .listen-section {
     text-align: center;
 }
@@ -81,7 +97,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+    gap: 0.5rem;
 }
 
 .release-cta {
@@ -115,65 +131,172 @@
     height: auto;
 }
 
+.section-media-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    border: 0.3125rem solid transparent;
+    border-radius: 0.5rem;
+
+    background-image: linear-gradient(
+        135deg,
+        #f7fbff 0%,
+        #8f969b 9%,
+        #f9ffff 17%,
+        #585f65 28%,
+        #dfe8ee 42%,
+        #333940 54%,
+        #fbffff 68%,
+        #777f86 82%,
+        #f4f8fb 100%
+    );
+    background-origin: border-box;
+    background-clip: border-box;
+
+    box-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.42);
+}
+
+.section-media-frame::before,
+.section-media-frame::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.section-media-frame::before {
+    inset: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 0.25rem;
+    box-shadow:
+        inset 0 0 0 1px rgba(39, 43, 47, 0.5),
+        0 0 0 1px rgba(20, 22, 24, 0.55);
+}
+
+.section-media-frame::after {
+    top: 0.3125rem;
+    right: 1.25rem;
+    left: 1.25rem;
+    height: 0.1875rem;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.82) 18%,
+        rgba(255, 255, 255, 0.18) 38%,
+        rgba(255, 255, 255, 0.9) 58%,
+        transparent
+    );
+}
+
+.section-media-frame .section-media {
+    position: relative;
+    z-index: 1;
+    border-radius: 0.1875rem;
+}
+
 .section-cta {
     align-self: flex-end;
     margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* ========================================
-   Upcoming Shows
+   Chrome Parchment
 ======================================== */
 
-.show-list {
-    width: 100%;
-    padding: clamp(1.25rem, 2.5vw, 1.875rem) clamp(1.25rem, 5vw, 5rem);
-    border-radius: 1.5rem;
+.home-section .show-list,
+.biography {
+    position: relative;
+
+    border: 0.3125rem solid transparent;
+    border-radius: 0.5rem;
 
     background-color: var(--color-parchment);
-    background-image: url(../Images/HomePage/UpcomingShows/parchment.png);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
+    background-image:
+        linear-gradient(
+            145deg,
+            rgba(255, 248, 226, 0.38),
+            rgba(178, 150, 95, 0.16) 52%,
+            rgba(255, 250, 231, 0.26)
+        ),
+        var(--chrome-parchment-image),
+        linear-gradient(
+            135deg,
+            #f7fbff 0%,
+            #8f969b 9%,
+            #f9ffff 17%,
+            #585f65 28%,
+            #dfe8ee 42%,
+            #333940 54%,
+            #fbffff 68%,
+            #777f86 82%,
+            #f4f8fb 100%
+        );
+    background-position: center, var(--chrome-parchment-position), center;
+    background-repeat: no-repeat, var(--chrome-parchment-repeat), no-repeat;
+    background-size: auto, var(--chrome-parchment-size), auto;
+    background-origin: padding-box, padding-box, border-box;
+    background-clip: padding-box, padding-box, border-box;
 
-    color: #111;
+    box-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.42),
+        inset 0 0 1.5rem rgba(73, 48, 18, 0.16);
 }
 
-.show {
-    display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(8rem, 1fr) auto;
-    align-items: center;
-    gap: clamp(1rem, 4vw, 6rem);
-
-    padding-bottom: 1.25rem;
-    margin-bottom: 1.25rem;
-    border-bottom: 1px solid var(--color-parchment-line);
+.home-section .show-list {
+    --chrome-parchment-image: var(--show-parchment-image);
+    --chrome-parchment-position: top;
+    --chrome-parchment-repeat: repeat-y;
+    --chrome-parchment-size: 100% auto;
 }
 
-.show:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: 0;
+.biography {
+    --chrome-parchment-image: url("../Images/HomePage/AboutUs/parchment.png");
+    --chrome-parchment-position: center;
+    --chrome-parchment-repeat: no-repeat;
+    --chrome-parchment-size: cover;
 }
 
-.show p {
-    margin: 0;
+.home-section .show-list::before,
+.home-section .show-list::after,
+.biography::before,
+.biography::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
 }
 
-.show-date-venue {
-    display: grid;
-    gap: 0.35rem;
+.home-section .show-list::before,
+.biography::before {
+    inset: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 0.25rem;
+    box-shadow:
+        inset 0 0 0 1px rgba(39, 43, 47, 0.5),
+        0 0 0 1px rgba(20, 22, 24, 0.55);
 }
 
-.show-date {
-    font-size: clamp(1.125rem, 2vw, 1.75rem);
-}
-
-.show-venue {
-    font-size: clamp(1rem, 1.4vw, 1.25rem);
-}
-
-.show-location {
-    font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+.home-section .show-list::after,
+.biography::after {
+    top: 0.3125rem;
+    right: 1.25rem;
+    left: 1.25rem;
+    height: 0.1875rem;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.82) 18%,
+        rgba(255, 255, 255, 0.18) 38%,
+        rgba(255, 255, 255, 0.9) 58%,
+        transparent
+    );
 }
 
 /* ========================================
@@ -181,30 +304,18 @@
 ======================================== */
 
 .biography {
-    position: relative;
     width: min(68.75rem, 85vw);
-    aspect-ratio: 1 / 1;
+    min-height: clamp(20rem, 58vw, 28rem);
+    aspect-ratio: 16 / 9;
     color: #111;
-}
-
-.biography::before {
-    content: "";
-    position: absolute;
-    inset: 5%;
-
-    background-image: url(../Images/HomePage/AboutUs/parchment.png);
-    background-size: cover;
-    background-position: center;
-
-    z-index: 0;
 }
 
 .bio-text {
     position: absolute;
-    inset: 11% 12% 12%;
+    inset: 9% 11% 10%;
 
     display: grid;
-    grid-template-rows: 0.5fr auto 2fr;
+    grid-template-rows: 0.2fr auto 1fr;
 
     z-index: 1;
     overflow: hidden;
@@ -212,30 +323,19 @@
 
 .bio-text .section-title {
     grid-row: 2;
-    margin-bottom: clamp(0.75rem, 3vw, 3.125rem);
+    margin-bottom: clamp(0.75rem, 2vw, 2rem);
 
     font-family: var(--font-about-us);
-    font-size: clamp(2rem, 4.5vw, 5.5rem);
+    font-size: clamp(2rem, 4.2vw, 4.75rem);
 }
 
 .bio-text p {
     grid-row: 3;
     align-self: start;
 
-    margin: 0 clamp(0.25rem, 5vw, 6.25rem);
-    font-size: clamp(0.875rem, 2vw, 1.875rem);
-    line-height: 1.8;
-}
-
-.bio-frame {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
+    margin: 0 clamp(0.25rem, 4vw, 5rem);
+    font-size: clamp(0.875rem, 1.65vw, 1.5rem);
+    line-height: 1.65;
 }
 
 /* ========================================
@@ -281,6 +381,11 @@
 }
 
 @media (hover: hover) {
+    .release-artwork-link:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.08);
+    }
+
     .contact a:hover {
         color: #aaa;
     }
@@ -301,23 +406,6 @@
     }
 }
 
-@media (max-width: 47.5rem) {
-    .show {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 1rem 1.5rem;
-    }
-
-    .show-location {
-        grid-column: 1;
-    }
-
-    .show-tickets {
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        align-self: center;
-    }
-}
-
 @media (max-width: 40rem) {
     .section-cta,
     .release-cta {
@@ -326,6 +414,8 @@
 
     .biography {
         width: min(95vw, 30rem);
+        min-height: clamp(20rem, 88vw, 24rem);
+        aspect-ratio: 4 / 3;
     }
 
     .bio-text {
@@ -346,21 +436,7 @@
 }
 
 @media (max-width: 30rem) {
-    .show {
-        grid-template-columns: 1fr;
-    }
-
-    .show-location,
-    .show-tickets {
-        grid-column: 1;
-        grid-row: auto;
-    }
-
-    .show-tickets {
-        justify-self: start;
-    }
-
     .streaming-button {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }

@@ -1,0 +1,60 @@
+/* ========================================
+   Contact Page
+======================================== */
+
+.contact-page {
+    width: min(100%, var(--content-max));
+    margin-inline: auto;
+    padding:
+        clamp(4rem, 7vw, 7rem)
+        var(--page-gutter)
+        clamp(5rem, 8vw, 8rem);
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+    width: min(100%, 46rem);
+}
+
+.contact-details h2 {
+    margin: 0;
+    font-size: clamp(1.625rem, 3vw, 2.75rem);
+    line-height: 1.15;
+}
+
+.contact-email {
+    color: var(--color-text);
+    font-size: clamp(1.125rem, 2.4vw, 1.75rem);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.25em;
+    overflow-wrap: anywhere;
+
+    transition: color 0.2s ease;
+}
+
+.contact-email:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+.contact-logo {
+    width: min(100%, 24rem);
+    height: auto;
+    margin-top: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+@media (hover: hover) {
+    .contact-email:hover {
+        color: #aaa;
+    }
+}

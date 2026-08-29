@@ -1,0 +1,242 @@
+/* ========================================
+   About Us Page
+======================================== */
+
+.about-page {
+    width: min(100%, var(--content-max));
+    margin-inline: auto;
+    padding:
+        clamp(4rem, 7vw, 7rem)
+        var(--page-gutter)
+        clamp(5rem, 8vw, 8rem);
+}
+
+.band-section,
+.members-section {
+    color: var(--color-text);
+}
+
+.band-section {
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
+.band-bio {
+    width: min(100%, 64rem);
+    margin-inline: auto;
+}
+
+.bio-parchment {
+    position: relative;
+    padding:
+        clamp(1.5rem, 3.4vw, 2.75rem)
+        clamp(1.25rem, 4vw, 3rem);
+
+    border: 0.3125rem solid transparent;
+    border-radius: 0.5rem;
+
+    background-color: var(--color-parchment);
+    background-image:
+        linear-gradient(
+            145deg,
+            rgba(255, 248, 226, 0.38),
+            rgba(178, 150, 95, 0.16) 52%,
+            rgba(255, 250, 231, 0.26)
+        ),
+        var(--show-parchment-image),
+        linear-gradient(
+            135deg,
+            #f7fbff 0%,
+            #8f969b 9%,
+            #f9ffff 17%,
+            #585f65 28%,
+            #dfe8ee 42%,
+            #333940 54%,
+            #fbffff 68%,
+            #777f86 82%,
+            #f4f8fb 100%
+        );
+    background-position: center, top, center;
+    background-repeat: no-repeat, repeat-y, no-repeat;
+    background-size: auto, 100% auto, auto;
+    background-origin: padding-box, padding-box, border-box;
+    background-clip: padding-box, padding-box, border-box;
+
+    box-shadow:
+        0 1rem 2rem rgba(0, 0, 0, 0.32),
+        0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.42),
+        inset 0 0 1.5rem rgba(73, 48, 18, 0.16);
+
+    color: #111;
+}
+
+.bio-parchment::before,
+.bio-parchment::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.bio-parchment::before {
+    inset: 0.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 0.25rem;
+    box-shadow:
+        inset 0 0 0 1px rgba(39, 43, 47, 0.5),
+        0 0 0 1px rgba(20, 22, 24, 0.55);
+}
+
+.bio-parchment::after {
+    top: 0.3125rem;
+    right: 1.25rem;
+    left: 1.25rem;
+    height: 0.1875rem;
+    border-radius: 999px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.82) 18%,
+        rgba(255, 255, 255, 0.18) 38%,
+        rgba(255, 255, 255, 0.9) 58%,
+        transparent
+    );
+}
+
+.band-bio p {
+    margin: 0;
+    font-size: 1.125rem;
+    line-height: 1.85;
+}
+
+.band-bio p + p {
+    margin-top: 1.5rem;
+}
+
+/* ========================================
+   Members
+======================================== */
+
+.members-section {
+    padding-top: clamp(3rem, 5vw, 5rem);
+}
+
+.members-title {
+    margin: 0 0 3rem;
+    font-size: 2.75rem;
+    line-height: 1.1;
+}
+
+.members-list {
+    display: grid;
+    gap: clamp(4rem, 6vw, 6rem);
+}
+
+.member-profile {
+    --member-caption-balance-offset: 2.35rem;
+
+    display: grid;
+    grid-template-columns: minmax(13rem, 19rem) minmax(0, 1fr);
+    align-items: center;
+    column-gap: clamp(2.5rem, 8vw, 7rem);
+    width: min(100%, 80rem);
+    margin-inline: auto;
+}
+
+.member-intro {
+    grid-column: 1;
+    text-align: center;
+}
+
+.member-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.25rem;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-name {
+    margin: 1rem 0 0.35rem;
+    font-size: 1.75rem;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.member-instrument {
+    margin: 0;
+    color: #d8d8d8;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.member-bio {
+    grid-column: 2;
+    align-self: center;
+    transform: translateY(calc(-1 * var(--member-caption-balance-offset)));
+}
+
+.member-bio p {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+}
+
+.member-bio p + p {
+    margin-top: 1.15rem;
+}
+
+/* ========================================
+   About Us Responsive Layout
+======================================== */
+
+@media (max-width: 52rem) {
+    .members-title {
+        text-align: center;
+    }
+
+    .member-profile {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 0;
+        margin-inline: auto;
+    }
+
+    .member-photo {
+        grid-column: 1;
+        grid-row: auto;
+        width: min(100%, 19rem);
+    }
+
+    .member-intro,
+    .member-name,
+    .member-instrument,
+    .member-bio {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .member-bio {
+        align-self: auto;
+        margin-top: 1.5rem;
+        transform: none;
+    }
+}
+
+@media (max-width: 34rem) {
+    .band-bio p,
+    .member-bio p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .members-title {
+        font-size: 2.25rem;
+    }
+}
