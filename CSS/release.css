@@ -213,3 +213,75 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 40rem) {
+    .release-page {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .release-hero {
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .release-page-title {
+        font-size: clamp(1.9rem, 9.5vw, 2.4rem);
+    }
+
+    .release-page-date {
+        font-size: 0.98rem;
+    }
+
+    .release-layout {
+        gap: 1.35rem;
+        width: 100%;
+    }
+
+    .release-artwork-large {
+        justify-self: center;
+        width: min(100%, 22rem);
+    }
+
+    .release-track-player {
+        gap: 0.55rem;
+        padding: 0.85rem;
+        border-radius: 0.45rem;
+    }
+
+    .release-track-heading {
+        gap: 0.55rem;
+    }
+
+    .release-track-heading h2 {
+        font-size: 1rem;
+    }
+
+    .release-track-player audio {
+        max-width: 100%;
+    }
+
+    .release-listen-more {
+        gap: 0.9rem;
+        margin-top: 1.75rem;
+    }
+
+    .release-listen-more h2 {
+        justify-self: center;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .release-streaming-links {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        width: min(100%, 22rem);
+    }
+
+    .release-streaming-button {
+        min-height: 2.45rem;
+        padding: 0.45rem 0.55rem;
+        line-height: 1.05;
+        white-space: normal;
+    }
+}

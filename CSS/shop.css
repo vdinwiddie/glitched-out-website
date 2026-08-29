@@ -49,6 +49,21 @@
 }
 
 @media (max-width: 34rem) {
+    .shop-page {
+        min-height: 58vh;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .shop-coming-title {
+        font-size: clamp(3rem, 18vw, 4.75rem);
+    }
+
+    .shop-copy {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
     .shop-actions {
         width: min(100%, 18rem);
     }

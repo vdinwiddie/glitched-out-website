@@ -1,6 +1,6 @@
 (function () {
     const SITE = {
-        logo: "Images/HomePage/Header/logo.svg",
+        logo: "Images/Header/logo.svg",
         nav: [
             { label: "Discography", href: "discography.html", page: "discography" },
             { label: "Shows", href: "shows.html", page: "shows" },
@@ -12,37 +12,37 @@
             {
                 label: "Instagram",
                 href: "https://www.instagram.com/glitched_out_chicago/",
-                icon: "Images/HomePage/Header/ig.svg",
+                icon: "Images/Header/ig.svg",
             },
             {
                 label: "Facebook",
                 href: "https://www.facebook.com/glitchedoutchicago/",
-                icon: "Images/HomePage/Header/fb.svg",
+                icon: "Images/Header/fb.svg",
             },
             {
                 label: "Spotify",
                 href: "https://open.spotify.com/artist/1mYSl7MkjKWYck7fI6GbTd?si=UxX4x3pMTj-hhR8BFOrp0A",
-                icon: "Images/HomePage/Header/sp.svg",
+                icon: "Images/Header/sp.svg",
             },
             {
                 label: "YouTube Music",
                 href: "https://music.youtube.com/channel/UC3-S2ekIVpy3KFDjjneu7nQ?si=ELe-DXlDLmwOdExn",
-                icon: "Images/HomePage/Header/yt.svg",
+                icon: "Images/Header/yt.svg",
             },
             {
                 label: "Apple Music",
                 href: "https://music.apple.com/us/artist/glitched-out/1728156264",
-                icon: "Images/HomePage/Header/am.svg",
+                icon: "Images/Header/am.svg",
             },
             {
                 label: "Deezer",
                 href: "https://link.deezer.com/s/34d7XraWxYM3XHabTfGpq",
-                icon: "Images/HomePage/Header/dz.svg",
+                icon: "Images/Header/dz.svg",
             },
             {
                 label: "Bandcamp",
                 href: "https://glitchedout.bandcamp.com",
-                icon: "Images/HomePage/Header/bc.svg",
+                icon: "Images/Header/bc.svg",
             },
         ],
     };
@@ -421,10 +421,13 @@
             `<a href="${escapeHtml(withBase("index.html"))}" class="logo" aria-label="Glitched Out home page">`,
             `<img src="${escapeHtml(withBase(SITE.logo))}" alt="Glitched Out">`,
             "</a>",
-            '<nav class="main-nav" aria-label="Primary navigation">',
+            '<button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation" data-mobile-menu-toggle>',
+            '<span></span><span></span><span></span>',
+            "</button>",
+            '<nav class="main-nav" id="site-navigation" aria-label="Primary navigation" data-mobile-menu-panel>',
             navLinks,
             "</nav>",
-            '<div class="header-actions">',
+            '<div class="header-actions" data-mobile-menu-panel>',
             `<div class="social-links">${socialLinks}</div>`,
             `<a href="${escapeHtml(withBase("shop.html"))}" class="button button-red shop-button"${currentPage === "shop" ? ' aria-current="page"' : ""}>SHOP</a>`,
             "</div>",
@@ -466,6 +469,89 @@
         window.addEventListener("scroll", requestSync, { passive: true });
         window.addEventListener("resize", requestSync);
         syncHeaderState();
+    }
+
+    function initializeMobileMenu() {
+        const header = document.querySelector(".site-header");
+
+        if (!header) {
+            return;
+        }
+
+        const toggle = header.querySelector("[data-mobile-menu-toggle]");
+        const panels = Array.from(header.querySelectorAll("[data-mobile-menu-panel]"));
+
+        if (!toggle || panels.length === 0) {
+            return;
+        }
+
+        const desktopQuery = window.matchMedia("(min-width: 40.0625rem)");
+        const openClass = "site-header--menu-open";
+
+        function isOpen() {
+            return header.classList.contains(openClass);
+        }
+
+        function syncPanelVisibility(menuIsOpen) {
+            const shouldShowPanels = desktopQuery.matches || menuIsOpen;
+
+            panels.forEach(function (panel) {
+                if (shouldShowPanels) {
+                    panel.removeAttribute("hidden");
+                    panel.removeAttribute("aria-hidden");
+                    return;
+                }
+
+                panel.setAttribute("hidden", "");
+                panel.setAttribute("aria-hidden", "true");
+            });
+        }
+
+        function setMenuState(menuIsOpen) {
+            header.classList.toggle(openClass, menuIsOpen);
+            toggle.setAttribute("aria-expanded", String(menuIsOpen));
+            toggle.setAttribute(
+                "aria-label",
+                menuIsOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+            syncPanelVisibility(menuIsOpen);
+        }
+
+        function syncLayoutMode() {
+            if (desktopQuery.matches) {
+                setMenuState(false);
+                return;
+            }
+
+            syncPanelVisibility(isOpen());
+        }
+
+        toggle.addEventListener("click", function () {
+            setMenuState(!isOpen());
+        });
+
+        header.querySelectorAll(".main-nav a, .header-actions a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                if (!desktopQuery.matches) {
+                    setMenuState(false);
+                }
+            });
+        });
+
+        window.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && isOpen()) {
+                setMenuState(false);
+                toggle.focus();
+            }
+        });
+
+        if (typeof desktopQuery.addEventListener === "function") {
+            desktopQuery.addEventListener("change", syncLayoutMode);
+        } else {
+            desktopQuery.addListener(syncLayoutMode);
+        }
+
+        syncLayoutMode();
     }
 
     function renderFooter() {
@@ -698,6 +784,100 @@
         }).join("");
     }
 
+    function createPhotoLightbox() {
+        const lightbox = document.createElement("div");
+
+        lightbox.className = "photo-lightbox";
+        lightbox.hidden = true;
+        lightbox.setAttribute("role", "dialog");
+        lightbox.setAttribute("aria-modal", "true");
+        lightbox.setAttribute("aria-label", "Photo preview");
+        lightbox.setAttribute("data-photo-lightbox", "");
+        lightbox.innerHTML = [
+            '<button class="photo-lightbox-close" type="button" aria-label="Close photo preview" data-photo-lightbox-close>&times;</button>',
+            '<img class="photo-lightbox-image" src="" alt="" data-photo-lightbox-image>',
+        ].join("");
+
+        document.body.appendChild(lightbox);
+
+        return lightbox;
+    }
+
+    function initializePhotoLightbox() {
+        const albumGrid = document.querySelector("[data-album-grid]");
+
+        if (!albumGrid) {
+            return;
+        }
+
+        const lightbox = document.querySelector("[data-photo-lightbox]") || createPhotoLightbox();
+        const image = lightbox.querySelector("[data-photo-lightbox-image]");
+        const closeButton = lightbox.querySelector("[data-photo-lightbox-close]");
+        let previousFocus = null;
+
+        if (!image || !closeButton) {
+            return;
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            image.removeAttribute("src");
+            image.alt = "";
+            document.body.classList.remove("photo-lightbox-open");
+
+            if (previousFocus && typeof previousFocus.focus === "function") {
+                previousFocus.focus({ preventScroll: true });
+            }
+        }
+
+        function openLightbox(link) {
+            const thumbnail = link.querySelector("img");
+
+            previousFocus = document.activeElement;
+            image.src = link.href;
+            image.alt = thumbnail ? thumbnail.alt : "Glitched Out photo";
+            lightbox.hidden = false;
+            document.body.classList.add("photo-lightbox-open");
+            closeButton.focus({ preventScroll: true });
+        }
+
+        albumGrid.addEventListener("click", function (event) {
+            const target = event.target;
+            const link = target && typeof target.closest === "function"
+                ? target.closest(".album-photo")
+                : null;
+
+            if (
+                !link ||
+                event.defaultPrevented ||
+                event.button !== 0 ||
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+            ) {
+                return;
+            }
+
+            event.preventDefault();
+            openLightbox(link);
+        });
+
+        closeButton.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", function (event) {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        window.addEventListener("keydown", function (event) {
+            if (event.key === "Escape" && !lightbox.hidden) {
+                closeLightbox();
+            }
+        });
+    }
+
     function releaseTrackTemplate(release, track) {
         const audioPath = withBase(`${release.folder}/${track.file}`);
         const trackTitle = `${track.number}. ${track.title}`;
@@ -808,6 +988,7 @@
 
         renderHeader();
         initializeFloatingHeader();
+        initializeMobileMenu();
         renderFooter();
         renderDividers();
         renderStreamingLinks();
@@ -818,6 +999,7 @@
         renderAboutMembers();
         renderAlbumHero(album);
         renderAlbumGrid(album);
+        initializePhotoLightbox();
         renderReleasePage(release);
         initializeCarousels();
     }

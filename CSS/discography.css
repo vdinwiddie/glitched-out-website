@@ -51,5 +51,24 @@
 @media (max-width: 40rem) {
     .discography {
         --carousel-card-width: clamp(13.75rem, 72.5vw, 18.75rem);
+
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .release-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .release-section-title {
+        margin: 0 1rem 1rem;
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .release-card h3 {
+        margin-top: 0.7rem;
+        font-size: 1.05rem;
+        line-height: 1.25;
     }
 }

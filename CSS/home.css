@@ -407,31 +407,105 @@
 }
 
 @media (max-width: 40rem) {
-    .section-cta,
-    .release-cta {
+    .latest-release {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        gap: 1.5rem;
+    }
+
+    .release-artwork {
+        width: min(100%, 22rem);
+        justify-self: center;
+    }
+
+    .release-info {
+        gap: 1.4rem;
+    }
+
+    .release-title {
+        margin: 0 0 0.6rem;
+        font-size: clamp(2rem, 10vw, 2.65rem);
+    }
+
+    .release-date {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    .release-listen-button,
+    .release-cta,
+    .section-cta {
         align-self: center;
+        width: min(100%, 22rem);
+    }
+
+    .listen-section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.45rem;
+    }
+
+    .streaming-links {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        width: min(100%, 22rem);
+        margin-inline: auto;
+    }
+
+    .streaming-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.35rem;
+        padding: 0.45rem 0.55rem;
+        line-height: 1.05;
+        white-space: normal;
+    }
+
+    .home-section {
+        padding-top: 2.75rem;
+        padding-bottom: 2.75rem;
+    }
+
+    .section-title {
+        margin-bottom: 1.4rem;
+        font-size: clamp(2rem, 9vw, 2.65rem);
+    }
+
+    .section-media-frame {
+        border-width: 0.22rem;
+        border-radius: 0.4rem;
+    }
+
+    .section-cta {
+        margin-top: 1.25rem;
     }
 
     .biography {
-        width: min(95vw, 30rem);
-        min-height: clamp(20rem, 88vw, 24rem);
-        aspect-ratio: 4 / 3;
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: auto;
+        padding: 1.35rem 1.25rem 1.5rem;
     }
 
     .bio-text {
-        inset: 10% 10% 11%;
-        grid-template-rows: 0.25fr auto 2fr;
+        position: relative;
+        inset: auto;
+
+        display: block;
+
+        overflow: visible;
     }
 
     .bio-text .section-title {
-        margin-bottom: 0.75rem;
+        margin: 0 0 0.75rem;
         font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
 
     .bio-text p {
-        margin-inline: 0.5rem;
-        font-size: clamp(0.8rem, 3.2vw, 1rem);
-        line-height: 1.5;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
     }
 }
 

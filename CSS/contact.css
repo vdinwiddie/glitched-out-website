@@ -58,3 +58,27 @@
         color: #aaa;
     }
 }
+
+@media (max-width: 40rem) {
+    .contact-page {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .contact-details {
+        gap: 1rem;
+    }
+
+    .contact-details h2 {
+        font-size: 1.45rem;
+    }
+
+    .contact-email {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .contact-logo {
+        width: min(100%, 16rem);
+    }
+}

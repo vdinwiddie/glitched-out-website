@@ -110,7 +110,8 @@ button {
 .button:focus-visible,
 .main-nav a:focus-visible,
 .social-links a:focus-visible,
-.logo:focus-visible {
+.logo:focus-visible,
+.mobile-menu-toggle:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 4px;
 }
@@ -304,6 +305,10 @@ button {
 
 .site-header--floating .header-actions {
     gap: clamp(0.75rem, 1.5vw, 1.125rem);
+}
+
+.mobile-menu-toggle {
+    display: none;
 }
 
 .social-links {
@@ -717,40 +722,249 @@ button {
 }
 
 @media (max-width: 40rem) {
-    .site-header {
-        grid-template-columns: 1fr;
-        justify-items: center;
+    :root {
+        --page-gutter: clamp(1rem, 5vw, 1.25rem);
+        --carousel-edge-gutter: 1rem;
+        --carousel-card-width: clamp(14rem, 82vw, 20rem);
     }
 
-    .logo,
-    .main-nav,
-    .header-actions {
-        grid-column: 1;
-        justify-self: center;
+    .site-header {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        justify-items: stretch;
+        align-items: center;
+        gap: 0.75rem 1rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .site-header--floating {
+        top: 0;
+        width: 100%;
+        gap: 0.75rem 1rem;
+        padding: 0.65rem 1rem;
+        border-radius: 0;
     }
 
     .logo {
+        grid-column: 1;
         grid-row: 1;
+        justify-self: start;
         margin-left: 0;
+        padding: 0.2rem;
+        border-radius: 0.55rem;
     }
 
     .site-header--floating .logo {
         margin-left: 0;
+        padding: 0.175rem;
+    }
+
+    .logo img {
+        width: clamp(4.25rem, 18vw, 5.25rem);
+    }
+
+    .site-header--floating .logo img {
+        width: clamp(3.75rem, 17vw, 4.75rem);
+    }
+
+    .mobile-menu-toggle {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.32rem;
+
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 0.5rem;
+
+        background: rgba(255, 255, 255, 0.09);
+        color: var(--color-text);
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 1.35rem;
+        height: 2px;
+        border-radius: 999px;
+
+        background: currentColor;
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .site-header--menu-open .mobile-menu-toggle span:nth-child(1) {
+        transform: translateY(0.44rem) rotate(45deg);
+    }
+
+    .site-header--menu-open .mobile-menu-toggle span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .site-header--menu-open .mobile-menu-toggle span:nth-child(3) {
+        transform: translateY(-0.44rem) rotate(-45deg);
+    }
+
+    [data-mobile-menu-panel][hidden] {
+        display: none !important;
     }
 
     .main-nav {
+        grid-column: 1 / -1;
         grid-row: 2;
-        gap: 0.9rem 1.5rem;
+        justify-self: stretch;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        width: 100%;
+        padding-top: 0.35rem;
+
+        font-size: 1rem;
+    }
+
+    .main-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 2.5rem;
+        padding: 0.65rem 0.5rem;
+
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 0.5rem;
+
+        background: rgba(255, 255, 255, 0.08);
+
+        line-height: 1.2;
+        text-align: center;
     }
 
     .header-actions {
+        grid-column: 1 / -1;
         grid-row: 3;
-        flex-wrap: wrap;
+        justify-self: stretch;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        padding-top: 0.25rem;
+    }
+
+    .social-links {
+        justify-content: space-between;
+        gap: 0.35rem;
+        width: 100%;
+        padding: 0.45rem 0.35rem;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .social-links a {
+        display: flex;
+        flex: 1;
         justify-content: center;
+        padding: 0.35rem 0.2rem;
+    }
+
+    .social-links img,
+    .site-header--floating .social-links img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .shop-button,
+    .site-header--floating .shop-button {
+        width: 100%;
+        padding: 0.55rem 1rem;
+        font-size: 1.45rem;
+    }
+
+    .button-large {
+        max-width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: clamp(1.05rem, 5vw, 1.3rem);
+        letter-spacing: 0.06rem;
+    }
+
+    .page-title {
+        margin-bottom: 2.75rem;
+        padding-bottom: 1.2rem;
+        font-size: clamp(2.25rem, 11vw, 3rem);
+    }
+
+    .page-title::after {
+        width: min(72vw, 18rem);
+    }
+
+    .section-divider {
+        width: calc(100% - 2rem);
+        margin-block: 0.5rem;
+    }
+
+    .show-list {
+        padding: 1.25rem;
+        border-radius: 0.8rem;
+        background-size: cover;
+    }
+
+    .show {
+        gap: 0.85rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .show-date {
+        font-size: 1.22rem;
+        line-height: 1.25;
+    }
+
+    .show-venue {
+        font-size: 1rem;
+    }
+
+    .show-location {
+        font-size: 1.25rem;
+        line-height: 1.25;
+    }
+
+    .show-tickets,
+    .show-tickets .button {
+        width: 100%;
     }
 
     .carousel-track {
-        gap: 1.25rem;
+        gap: 1rem;
+        padding: 0.75rem 0 1.25rem;
+        scroll-padding-inline: var(--carousel-edge-gutter);
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-card {
+        scroll-snap-align: center;
+    }
+
+    .carousel-arrow {
+        display: none;
+    }
+
+    .site-footer {
+        padding: 0 1rem 2rem;
+        text-align: center;
+    }
+
+    .site-footer p {
+        font-size: 0.82rem;
     }
 }
 

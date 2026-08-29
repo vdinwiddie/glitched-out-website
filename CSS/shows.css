@@ -85,3 +85,15 @@
         transparent
     );
 }
+
+@media (max-width: 40rem) {
+    .shows-page {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .shows-page .show-list {
+        width: 100%;
+        border-width: 0.22rem;
+    }
+}

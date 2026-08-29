@@ -240,3 +240,66 @@
         font-size: 2.25rem;
     }
 }
+
+@media (max-width: 40rem) {
+    .about-page {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    .band-section {
+        margin-bottom: 2rem;
+    }
+
+    .bio-parchment {
+        padding: 1.25rem 1rem;
+        border-width: 0.22rem;
+    }
+
+    .band-bio p,
+    .member-bio p {
+        font-size: 0.98rem;
+        line-height: 1.68;
+    }
+
+    .band-bio p + p,
+    .member-bio p + p {
+        margin-top: 1rem;
+    }
+
+    .members-section {
+        padding-top: 2.5rem;
+    }
+
+    .members-title {
+        margin-bottom: 2rem;
+        font-size: 2.25rem;
+        text-align: center;
+    }
+
+    .members-list {
+        gap: 3.25rem;
+    }
+
+    .member-profile {
+        width: 100%;
+    }
+
+    .member-photo {
+        width: min(82vw, 16.5rem);
+    }
+
+    .member-name {
+        margin-top: 0.85rem;
+        font-size: 1.45rem;
+    }
+
+    .member-instrument {
+        font-size: 0.95rem;
+    }
+
+    .member-bio {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
