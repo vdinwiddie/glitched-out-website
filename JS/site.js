@@ -47,198 +47,13 @@
         ],
     };
 
-    const STREAMING_LINKS = [
-        {
-            label: "SPOTIFY",
-            href: "https://open.spotify.com/album/3zcXHCuI8jQVVwaZbR5Gif?si=99GseL34RWS-Nl380LI2Sw",
-        },
-        {
-            label: "YOUTUBE MUSIC",
-            href: "https://music.youtube.com/playlist?list=OLAK5uy_lQRNTzU4P6k5OGrBVamGhcd8qSyzkjK58&si=ETcBkUxjNF1R7TlM",
-        },
-        {
-            label: "APPLE MUSIC",
-            href: "https://music.apple.com/us/album/the-physical-properties-of-standing-still-single/6797996105",
-        },
-        {
-            label: "DEEZER",
-            href: "https://www.deezer.com/en/album/1046243252?host=0&deferredFl=1",
-        },
-        {
-            label: "BANDCAMP",
-            href: "https://glitchedout.bandcamp.com/album/the-physical-properties-of-standing-still",
-        },
-    ];
-
-    const RELEASES = [
-        {
-            id: "the-physical-properties-of-standing-still",
-            title: "The Physical Properties of Standing Still",
-            date: "August 16, 2026",
-            folder: "Releases/EP.ThePhysicalPropertiesOfStandingStill",
-            artwork: "Releases/EP.ThePhysicalPropertiesOfStandingStill/AlbumArtwork.jpg",
-            artworkAlt: "Album artwork for The Physical Properties of Standing Still",
-            tracks: [
-                { number: "01", title: "Momentum", file: "01.Momentum.mp3" },
-                { number: "02", title: "Inertia", file: "02.Inertia.mp3" },
-                { number: "03", title: "Gravity", file: "03.Gravity.mp3" },
-            ],
-            streamingLinks: [
-                {
-                    label: "SPOTIFY",
-                    href: "https://open.spotify.com/album/3zcXHCuI8jQVVwaZbR5Gif?si=99GseL34RWS-Nl380LI2Sw",
-                },
-                {
-                    label: "YOUTUBE MUSIC",
-                    href: "https://music.youtube.com/playlist?list=OLAK5uy_lQRNTzU4P6k5OGrBVamGhcd8qSyzkjK58&si=ETcBkUxjNF1R7TlM",
-                },
-                {
-                    label: "APPLE MUSIC",
-                    href: "https://music.apple.com/us/album/the-physical-properties-of-standing-still-single/6797996105",
-                },
-                {
-                    label: "DEEZER",
-                    href: "https://www.deezer.com/en/album/1046243252?host=0&deferredFl=1",
-                },
-                {
-                    label: "BANDCAMP",
-                    href: "https://glitchedout.bandcamp.com/album/the-physical-properties-of-standing-still",
-                },
-            ],
-        },
-        {
-            id: "covalence",
-            title: "Covalence",
-            date: "January 25, 2024",
-            folder: "Releases/Single.Covalence",
-            artwork: "Releases/Single.Covalence/AlbumArtwork.jpg",
-            artworkAlt: "Album artwork for Covalence",
-            tracks: [
-                { number: "01", title: "Covalence", file: "01.Covalence.mp3" },
-            ],
-            streamingLinks: [
-                {
-                    label: "SPOTIFY",
-                    href: "https://open.spotify.com/album/4uFMjfiM3I2fCeryfLe7vt?si=ts2C8480RzKEXlT8rIBkhQ",
-                },
-                {
-                    label: "YOUTUBE MUSIC",
-                    href: "https://music.youtube.com/playlist?list=OLAK5uy_kopHUfQWHWk_XCbBb5it0aVgapOXYKxps&si=bxb-Ux-fH_-P3BGS",
-                },
-                {
-                    label: "APPLE MUSIC",
-                    href: "https://music.apple.com/us/album/covalence-single/1728156782",
-                },
-                {
-                    label: "DEEZER",
-                    href: "https://www.deezer.com/en/album/541710022",
-                },
-                {
-                    label: "BANDCAMP",
-                    href: "https://glitchedout.bandcamp.com/track/covalence",
-                },
-            ],
-        },
-    ];
-
-    const SHOWS = [
-        {
-            date: "October 17, 2026",
-            venue: "Kombucha Club",
-            location: "Chicago, IL",
-            tickets: "https://www.instagram.com/kombuchaclubchicago/",
-        },
-        {
-            date: "January 10, 2027",
-            venue: "Liar's Club",
-            location: "Chicago, IL",
-            tickets: "https://www.instagram.com/liars.club/?hl=en",
-        },
-    ];
-
-    const PHOTO_ALBUMS = [
-        {
-            id: "aug-11-2026.treehousestudios",
-            title: "Treehouse Records",
-            location: "Chicago, IL",
-            date: "August 11, 2026",
-            shortDate: "Aug 11, 2026",
-            thumb: "Images/PhotosAndVideos/Photos/3.Treehouse.jpg",
-            folder: "Images/PhotosAndVideos/PhotoAlbums/aug-11-2026.treehousestudios",
-            files: [
-                "764693098_922051160948254_6892072114945797864_n.jpg",
-                "764906464_1057212387175145_4922298301549836118_n.jpg",
-                "764924171_1723070042307311_3792170517671704877_n.jpg",
-                "765007324_27747603358224215_3425960356106097984_n.jpg",
-                "765262235_1080145507805392_984709488138807458_n.jpg",
-                "765283664_28115539971404742_6994351705560322869_n.jpg",
-                "765369369_1691368171968672_7182598977089757451_n.jpg",
-                "765492919_27718166347846795_6985607351774260150_n.jpg",
-                "765636907_1070389765460565_8433852343366156062_n.jpg",
-                "765693863_2128391434737012_5381498151493150010_n.jpg",
-                "765848710_1083998927385717_4795610692720437959_n.jpg",
-                "766106210_1927929144567813_3622934159886826113_n.jpg",
-                "767130154_2907223513009825_221062033940649439_n.jpg",
-                "767755485_1277671887673913_3129803557719233005_n.jpg",
-                "768246426_2265611874278925_345219678648096000_n.jpg",
-                "768703852_2506640909810880_7557945356006283015_n.jpg",
-                "769385138_4509280859207503_2812890985999726738_n.jpg",
-                "769412140_1680593473396323_3879847362348903517_n.jpg",
-                "769702441_1979070092798926_1245227238169640865_n.jpg",
-                "770329152_1323973769546991_7215932493748798458_n.jpg",
-            ],
-        },
-        {
-            id: "may-29-2026.undergroundlounge",
-            title: "Underground Lounge",
-            location: "Chicago, IL",
-            date: "May 29, 2026",
-            shortDate: "May 29, 2026",
-            thumb: "Images/PhotosAndVideos/Photos/2.UndergroundLounge.jpg",
-            folder: "Images/PhotosAndVideos/PhotoAlbums/may-29-2026.undergroundlounge",
-            files: [
-                "IMG_20260529_221535.jpg",
-                "IMG_20260529_221538.jpg",
-                "IMG_20260529_221540.jpg",
-                "IMG_20260529_221541.jpg",
-                "IMG_20260529_221543.jpg",
-                "IMG_20260529_221546.jpg",
-                "IMG_20260529_221548.jpg",
-                "received_974190248730284.jpg",
-                "Screenshot_20260529_221244_Messages.jpg",
-            ],
-        },
-        {
-            id: "aug-29-2025.dumpsterphotos",
-            title: "Dumpster Photos",
-            location: "Des Plaines, IL",
-            date: "August 29, 2025",
-            shortDate: "Aug 29, 2025",
-            thumb: "Images/PhotosAndVideos/Photos/1.Dumpster.png",
-            folder: "Images/PhotosAndVideos/PhotoAlbums/aug-29-2025.dumpsterphotos",
-            files: [
-                "20250829_175454.jpg",
-                "20250829_175520.jpg",
-                "20250829_175634.jpg",
-                "20250829_180119.jpg",
-                "20250829_180302.jpg",
-                "20250829_180321.jpg",
-                "20250829_180605.jpg",
-                "20250829_180613.jpg",
-                "20250829_180627.jpg",
-                "20250829_180644.jpg",
-                "20250829_180652.jpg",
-                "20250829_180838.jpg",
-                "20250829_180845.jpg",
-                "20250829_180854.jpg",
-                "20250829_180919.jpg",
-                "20250829_180930.jpg",
-                "20250829_180942.jpg",
-                "20250829_181008.jpg",
-                "20250829_181017.jpg",
-            ],
-        },
-    ];
+    const CONTENT_DATA_PATH = "Data/site-content.json";
+    const AUDIO_SPEEDS = [0.75, 1, 1.25, 1.5, 2];
+    let RELEASES = [];
+    let SHOWS = [];
+    let PHOTO_ALBUMS = [];
+    let VIDEOS = [];
+    let DISCOGRAPHY = [];
 
     const EXTRA_PHOTO_CARDS = [
         {
@@ -278,16 +93,6 @@
         }
     ];
 
-    const VIDEOS = [
-        {
-            title: "Reggie's Music Joint",
-            meta: "July 5, 2026 | Chicago, IL",
-            href: "https://www.youtube.com/live/seMSH0fifdI?t=8475",
-            thumb: "Images/PhotosAndVideos/Videos/1.Reggies.png",
-            alt: "Glitched Out live performance preview",
-        },
-    ];
-
     const ABOUT_MEMBERS = [
         {
             name: "Minyong Yu",
@@ -321,40 +126,6 @@
         },
     ];
 
-    const DISCOGRAPHY = [
-        {
-            title: "Full Lengths",
-            scrollLabel: "full lengths",
-            releases: [
-                // { title: "Full Length 1", image: "Images/Discography/FullLengths/1.png", alt: "Full Length 1 cover" },
-            ],
-        },
-        {
-            title: "EPs",
-            scrollLabel: "EPs",
-            releases: [
-                {
-                    title: "The Physical Properties of Standing Still",
-                    image: "Images/Discography/EPs/1.ThePhysicalPropertiesOfStandingStill.jpg",
-                    alt: "The Physical Properties of Standing Still cover",
-                    href: "Releases/EP.ThePhysicalPropertiesOfStandingStill/index.html",
-                },
-            ],
-        },
-        {
-            title: "Singles",
-            scrollLabel: "singles",
-            releases: [
-                {
-                    title: "Covalence",
-                    image: "Images/Discography/Singles/1.Covalence.jpg",
-                    alt: "Covalence cover",
-                    href: "Releases/Single.Covalence/index.html",
-                },
-            ],
-        },
-    ];
-
     const entityMap = {
         "&": "&amp;",
         "<": "&lt;",
@@ -381,6 +152,28 @@
         return basePath() + path;
     }
 
+    function arrayFromData(data, camelCaseKey, constantKey) {
+        const value = data && (data[camelCaseKey] || data[constantKey]);
+
+        return Array.isArray(value) ? value : [];
+    }
+
+    async function loadSiteContent() {
+        const response = await fetch(withBase(CONTENT_DATA_PATH), { cache: "no-cache" });
+
+        if (!response.ok) {
+            throw new Error(`Could not load ${CONTENT_DATA_PATH}: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        RELEASES = arrayFromData(data, "releases", "RELEASES");
+        SHOWS = arrayFromData(data, "shows", "SHOWS");
+        PHOTO_ALBUMS = arrayFromData(data, "photoAlbums", "PHOTO_ALBUMS");
+        VIDEOS = arrayFromData(data, "videos", "VIDEOS");
+        DISCOGRAPHY = arrayFromData(data, "discography", "DISCOGRAPHY");
+    }
+
     function externalAttributes(href) {
         return /^https?:/.test(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
     }
@@ -389,6 +182,48 @@
         const className = extraClass ? ` ${extraClass}` : "";
 
         return `<a class="button button-blue streaming-button${className}" href="${escapeHtml(link.href)}"${externalAttributes(link.href)}>${escapeHtml(link.label)}</a>`;
+    }
+
+    function releasePageHref(release) {
+        return release.href || (release.folder ? `${release.folder}/index.html` : "#");
+    }
+
+    function releaseStreamingLinks(release) {
+        return release && Array.isArray(release.streamingLinks) ? release.streamingLinks : [];
+    }
+
+    function renderLatestRelease() {
+        const mount = document.querySelector("[data-latest-release]");
+        const release = RELEASES[0];
+
+        if (!mount || !release) {
+            return;
+        }
+
+        const href = releasePageHref(release);
+        const streamingLinks = releaseStreamingLinks(release).map(function (link) {
+            return streamingButtonTemplate(link);
+        }).join("");
+
+        mount.innerHTML = [
+            '<div class="release-artwork">',
+            `<a class="release-artwork-link" href="${escapeHtml(withBase(href))}" aria-label="Open ${escapeHtml(release.title)} release page">`,
+            `<img src="${escapeHtml(withBase(release.artwork))}" alt="${escapeHtml(release.artworkAlt)}">`,
+            "</a>",
+            "</div>",
+            '<div class="release-info">',
+            "<div>",
+            `<h1 class="release-title">${escapeHtml(release.title)}</h1>`,
+            `<p class="release-date">Out ${escapeHtml(release.date)}</p>`,
+            "</div>",
+            `<a class="button button-red button-large release-listen-button" href="${escapeHtml(withBase(href))}">Listen here</a>`,
+            '<div class="listen-section">',
+            "<h2>Or listen now on...</h2>",
+            `<div class="streaming-links" data-streaming-links>${streamingLinks}</div>`,
+            "</div>",
+            `<a class="button button-red button-large release-cta" href="${escapeHtml(withBase("discography.html"))}">Check out our discography!</a>`,
+            "</div>",
+        ].join("");
     }
 
     function renderHeader() {
@@ -575,7 +410,7 @@
             return;
         }
 
-        mount.innerHTML = STREAMING_LINKS.map(function (link) {
+        mount.innerHTML = releaseStreamingLinks(RELEASES[0]).map(function (link) {
             return streamingButtonTemplate(link);
         }).join("");
     }
@@ -746,6 +581,18 @@
         });
     }
 
+    function formatAudioTime(value) {
+        if (!Number.isFinite(value) || value < 0) {
+            return "0:00";
+        }
+
+        const totalSeconds = Math.floor(value);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = String(totalSeconds % 60).padStart(2, "0");
+
+        return `${minutes}:${seconds}`;
+    }
+
     function renderAlbumHero(album) {
         const mount = document.querySelector("[data-album-hero]");
 
@@ -771,8 +618,10 @@
             return;
         }
 
+        const files = Array.isArray(album.files) ? album.files : [];
+
         mount.setAttribute("aria-label", `${album.title} photo gallery`);
-        mount.innerHTML = album.files.map(function (fileName, index) {
+        mount.innerHTML = files.map(function (fileName, index) {
             const imagePath = withBase(`${album.folder}/${fileName}`);
             const alt = `${album.title} photo ${index + 1}`;
 
@@ -881,6 +730,11 @@
     function releaseTrackTemplate(release, track) {
         const audioPath = withBase(`${release.folder}/${track.file}`);
         const trackTitle = `${track.number}. ${track.title}`;
+        const speedOptions = AUDIO_SPEEDS.map(function (speed) {
+            const selected = speed === 1 ? " selected" : "";
+
+            return `<option value="${speed}"${selected}>${speed}x</option>`;
+        }).join("");
 
         return [
             '<article class="release-track-player">',
@@ -888,12 +742,230 @@
             `<span>${escapeHtml(track.number)}</span>`,
             `<h2>${escapeHtml(track.title)}</h2>`,
             "</div>",
-            '<audio controls preload="metadata">',
+            '<div class="release-audio-player" data-audio-player>',
+            '<audio class="release-audio-native" preload="metadata" controlslist="nodownload" data-audio>',
             `<source src="${escapeHtml(audioPath)}" type="audio/mpeg">`,
             `Your browser does not support embedded audio for ${escapeHtml(trackTitle)}.`,
             "</audio>",
+            '<div class="release-audio-controls">',
+            `<button class="release-audio-play" type="button" aria-label="Play ${escapeHtml(trackTitle)}" data-audio-play>`,
+            '<span class="release-audio-play-icon" aria-hidden="true"></span>',
+            "</button>",
+            '<span class="release-audio-time" data-audio-current>0:00</span>',
+            `<input class="release-audio-timeline" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek ${escapeHtml(trackTitle)}" data-audio-timeline disabled>`,
+            '<span class="release-audio-time" data-audio-duration>0:00</span>',
+            '<div class="release-audio-menu" data-audio-menu>',
+            `<button class="release-audio-menu-toggle" type="button" aria-label="Playback options for ${escapeHtml(trackTitle)}" aria-haspopup="true" aria-expanded="false" data-audio-menu-toggle>`,
+            '<span class="release-audio-menu-dots" aria-hidden="true"><span></span><span></span><span></span></span>',
+            "</button>",
+            '<div class="release-audio-menu-popover" data-audio-menu-popover hidden>',
+            '<label class="release-audio-speed-label">',
+            "<span>Playback speed</span>",
+            `<select data-audio-speed aria-label="Playback speed for ${escapeHtml(trackTitle)}">`,
+            speedOptions,
+            "</select>",
+            "</label>",
+            "</div>",
+            "</div>",
+            "</div>",
+            "</div>",
             "</article>",
         ].join("");
+    }
+
+    function initializeAudioPlayers() {
+        const players = Array.from(document.querySelectorAll("[data-audio-player]"));
+
+        function closeMenus(exceptMenu) {
+            players.forEach(function (player) {
+                const menu = player.querySelector("[data-audio-menu]");
+
+                if (!menu || menu === exceptMenu) {
+                    return;
+                }
+
+                const toggle = menu.querySelector("[data-audio-menu-toggle]");
+                const popover = menu.querySelector("[data-audio-menu-popover]");
+
+                if (toggle && popover) {
+                    toggle.setAttribute("aria-expanded", "false");
+                    popover.hidden = true;
+                }
+            });
+        }
+
+        function pauseOtherPlayers(currentAudio) {
+            players.forEach(function (player) {
+                const audio = player.querySelector("[data-audio]");
+
+                if (audio && audio !== currentAudio) {
+                    audio.pause();
+                }
+            });
+        }
+
+        players.forEach(function (player) {
+            const audio = player.querySelector("[data-audio]");
+            const playButton = player.querySelector("[data-audio-play]");
+            const timeline = player.querySelector("[data-audio-timeline]");
+            const currentTime = player.querySelector("[data-audio-current]");
+            const durationTime = player.querySelector("[data-audio-duration]");
+            const menu = player.querySelector("[data-audio-menu]");
+            const menuToggle = player.querySelector("[data-audio-menu-toggle]");
+            const menuPopover = player.querySelector("[data-audio-menu-popover]");
+            const speedSelect = player.querySelector("[data-audio-speed]");
+
+            if (!audio || !playButton || !timeline || !currentTime || !durationTime) {
+                return;
+            }
+
+            function durationIsReady() {
+                return Number.isFinite(audio.duration) && audio.duration > 0;
+            }
+
+            function updateTimeline() {
+                const duration = durationIsReady() ? audio.duration : 0;
+                const progress = duration ? (audio.currentTime / duration) * 100 : 0;
+
+                currentTime.textContent = formatAudioTime(audio.currentTime);
+                durationTime.textContent = formatAudioTime(duration);
+                timeline.disabled = !duration;
+                timeline.value = duration ? String(Math.round((audio.currentTime / duration) * Number(timeline.max))) : "0";
+                timeline.style.setProperty("--audio-progress", `${Math.min(progress, 100)}%`);
+            }
+
+            function seekFromTimeline() {
+                if (!durationIsReady()) {
+                    return;
+                }
+
+                const timelineMax = Number(timeline.max);
+                const ratio = timelineMax ? Number(timeline.value) / timelineMax : 0;
+
+                audio.currentTime = Math.min(Math.max(ratio, 0), 1) * audio.duration;
+                updateTimeline();
+            }
+
+            function seekFromPointer(event) {
+                if (timeline.disabled || !durationIsReady()) {
+                    return;
+                }
+
+                const rect = timeline.getBoundingClientRect();
+                const ratio = rect.width ? (event.clientX - rect.left) / rect.width : 0;
+                const clampedRatio = Math.min(Math.max(ratio, 0), 1);
+
+                event.preventDefault();
+                timeline.focus({ preventScroll: true });
+                timeline.value = String(Math.round(clampedRatio * Number(timeline.max)));
+                seekFromTimeline();
+            }
+
+            function seekBySeconds(seconds) {
+                if (!durationIsReady()) {
+                    return;
+                }
+
+                audio.currentTime = Math.min(Math.max(audio.currentTime + seconds, 0), audio.duration);
+                updateTimeline();
+            }
+
+            playButton.addEventListener("click", function () {
+                if (audio.paused) {
+                    pauseOtherPlayers(audio);
+                    const playPromise = audio.play();
+
+                    if (playPromise && typeof playPromise.catch === "function") {
+                        playPromise.catch(function () {
+                            audio.pause();
+                        });
+                    }
+                } else {
+                    audio.pause();
+                }
+            });
+
+            audio.addEventListener("play", function () {
+                playButton.classList.add("is-playing");
+                playButton.setAttribute("aria-label", playButton.getAttribute("aria-label").replace(/^Play /, "Pause "));
+            });
+
+            audio.addEventListener("pause", function () {
+                playButton.classList.remove("is-playing");
+                playButton.setAttribute("aria-label", playButton.getAttribute("aria-label").replace(/^Pause /, "Play "));
+            });
+
+            audio.addEventListener("loadedmetadata", updateTimeline);
+            audio.addEventListener("durationchange", updateTimeline);
+            audio.addEventListener("timeupdate", updateTimeline);
+            audio.addEventListener("ended", updateTimeline);
+            timeline.addEventListener("input", seekFromTimeline);
+            timeline.addEventListener("change", seekFromTimeline);
+            timeline.addEventListener("pointerdown", function (event) {
+                seekFromPointer(event);
+
+                if (typeof timeline.setPointerCapture === "function") {
+                    timeline.setPointerCapture(event.pointerId);
+                }
+            });
+            timeline.addEventListener("pointermove", function (event) {
+                if (event.buttons === 1) {
+                    seekFromPointer(event);
+                }
+            });
+            timeline.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowLeft" || event.key === "ArrowDown") {
+                    event.preventDefault();
+                    seekBySeconds(event.shiftKey ? -30 : -5);
+                } else if (event.key === "ArrowRight" || event.key === "ArrowUp") {
+                    event.preventDefault();
+                    seekBySeconds(event.shiftKey ? 30 : 5);
+                } else if (event.key === "Home") {
+                    event.preventDefault();
+                    audio.currentTime = 0;
+                    updateTimeline();
+                } else if (event.key === "End" && durationIsReady()) {
+                    event.preventDefault();
+                    audio.currentTime = audio.duration;
+                    updateTimeline();
+                }
+            });
+
+            if (menu && menuToggle && menuPopover) {
+                menuToggle.addEventListener("click", function () {
+                    const willOpen = menuPopover.hidden;
+
+                    closeMenus(menu);
+                    menuPopover.hidden = !willOpen;
+                    menuToggle.setAttribute("aria-expanded", String(willOpen));
+                });
+            }
+
+            if (speedSelect) {
+                speedSelect.addEventListener("change", function () {
+                    audio.playbackRate = Number(speedSelect.value) || 1;
+                });
+            }
+
+            updateTimeline();
+        });
+
+        document.addEventListener("click", function (event) {
+            const target = event.target;
+            const menu = target && typeof target.closest === "function"
+                ? target.closest("[data-audio-menu]")
+                : null;
+
+            if (!menu) {
+                closeMenus();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeMenus();
+            }
+        });
     }
 
     function renderReleasePage(release) {
@@ -903,10 +975,10 @@
             return;
         }
 
-        const tracks = release.tracks.map(function (track) {
+        const tracks = (Array.isArray(release.tracks) ? release.tracks : []).map(function (track) {
             return releaseTrackTemplate(release, track);
         }).join("");
-        const streamingLinks = release.streamingLinks.map(function (link) {
+        const streamingLinks = releaseStreamingLinks(release).map(function (link) {
             return streamingButtonTemplate(link, "release-streaming-button");
         }).join("");
 
@@ -982,25 +1054,34 @@
         });
     }
 
-    function init() {
-        const album = currentAlbum();
-        const release = currentRelease();
-
+    async function init() {
         renderHeader();
         initializeFloatingHeader();
         initializeMobileMenu();
         renderFooter();
         renderDividers();
+        renderAboutMembers();
+
+        try {
+            await loadSiteContent();
+        } catch (error) {
+            console.error("Unable to load site content data.", error);
+        }
+
+        const album = currentAlbum();
+        const release = currentRelease();
+
+        renderLatestRelease();
         renderStreamingLinks();
         renderShows();
         renderDiscography();
         renderPhotoAlbums();
         renderVideos();
-        renderAboutMembers();
         renderAlbumHero(album);
         renderAlbumGrid(album);
         initializePhotoLightbox();
         renderReleasePage(release);
+        initializeAudioPlayers();
         initializeCarousels();
     }
 

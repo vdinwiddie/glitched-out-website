@@ -1,0 +1,225 @@
+{
+  "releases": [
+    {
+      "id": "the-physical-properties-of-standing-still",
+      "title": "The Physical Properties of Standing Still",
+      "date": "August 16, 2026",
+      "folder": "Releases/EP.ThePhysicalPropertiesOfStandingStill",
+      "artwork": "Releases/EP.ThePhysicalPropertiesOfStandingStill/AlbumArtwork.jpg",
+      "artworkAlt": "Album artwork for The Physical Properties of Standing Still",
+      "tracks": [
+        {
+          "number": "01",
+          "title": "Momentum",
+          "file": "01.Momentum.mp3"
+        },
+        {
+          "number": "02",
+          "title": "Inertia",
+          "file": "02.Inertia.mp3"
+        },
+        {
+          "number": "03",
+          "title": "Gravity",
+          "file": "03.Gravity.mp3"
+        }
+      ],
+      "streamingLinks": [
+        {
+          "label": "SPOTIFY",
+          "href": "https://open.spotify.com/album/3zcXHCuI8jQVVwaZbR5Gif?si=99GseL34RWS-Nl380LI2Sw"
+        },
+        {
+          "label": "YOUTUBE MUSIC",
+          "href": "https://music.youtube.com/playlist?list=OLAK5uy_lQRNTzU4P6k5OGrBVamGhcd8qSyzkjK58&si=ETcBkUxjNF1R7TlM"
+        },
+        {
+          "label": "APPLE MUSIC",
+          "href": "https://music.apple.com/us/album/the-physical-properties-of-standing-still-single/6797996105"
+        },
+        {
+          "label": "DEEZER",
+          "href": "https://www.deezer.com/en/album/1046243252?host=0&deferredFl=1"
+        },
+        {
+          "label": "BANDCAMP",
+          "href": "https://glitchedout.bandcamp.com/album/the-physical-properties-of-standing-still"
+        }
+      ]
+    },
+    {
+      "id": "covalence",
+      "title": "Covalence",
+      "date": "January 25, 2024",
+      "folder": "Releases/Single.Covalence",
+      "artwork": "Releases/Single.Covalence/AlbumArtwork.jpg",
+      "artworkAlt": "Album artwork for Covalence",
+      "tracks": [
+        {
+          "number": "01",
+          "title": "Covalence",
+          "file": "01.Covalence.mp3"
+        }
+      ],
+      "streamingLinks": [
+        {
+          "label": "SPOTIFY",
+          "href": "https://open.spotify.com/album/4uFMjfiM3I2fCeryfLe7vt?si=ts2C8480RzKEXlT8rIBkhQ"
+        },
+        {
+          "label": "YOUTUBE MUSIC",
+          "href": "https://music.youtube.com/playlist?list=OLAK5uy_kopHUfQWHWk_XCbBb5it0aVgapOXYKxps&si=bxb-Ux-fH_-P3BGS"
+        },
+        {
+          "label": "APPLE MUSIC",
+          "href": "https://music.apple.com/us/album/covalence-single/1728156782"
+        },
+        {
+          "label": "DEEZER",
+          "href": "https://www.deezer.com/en/album/541710022"
+        },
+        {
+          "label": "BANDCAMP",
+          "href": "https://glitchedout.bandcamp.com/track/covalence"
+        }
+      ]
+    }
+  ],
+  "shows": [
+    {
+      "date": "October 17, 2026",
+      "venue": "Kombucha Club",
+      "location": "Chicago, IL",
+      "tickets": "https://www.instagram.com/kombuchaclubchicago/"
+    },
+    {
+      "date": "January 10, 2027",
+      "venue": "Liar's Club",
+      "location": "Chicago, IL",
+      "tickets": "https://www.instagram.com/liars.club/?hl=en"
+    }
+  ],
+  "photoAlbums": [
+    {
+      "id": "aug-11-2026.treehousestudios",
+      "title": "Treehouse Records",
+      "location": "Chicago, IL",
+      "date": "August 11, 2026",
+      "shortDate": "Aug 11, 2026",
+      "thumb": "Images/PhotosAndVideos/Photos/3.Treehouse.jpg",
+      "folder": "Images/PhotosAndVideos/PhotoAlbums/aug-11-2026.treehousestudios",
+      "files": [
+        "764693098_922051160948254_6892072114945797864_n.jpg",
+        "764906464_1057212387175145_4922298301549836118_n.jpg",
+        "764924171_1723070042307311_3792170517671704877_n.jpg",
+        "765007324_27747603358224215_3425960356106097984_n.jpg",
+        "765262235_1080145507805392_984709488138807458_n.jpg",
+        "765283664_28115539971404742_6994351705560322869_n.jpg",
+        "765369369_1691368171968672_7182598977089757451_n.jpg",
+        "765492919_27718166347846795_6985607351774260150_n.jpg",
+        "765636907_1070389765460565_8433852343366156062_n.jpg",
+        "765693863_2128391434737012_5381498151493150010_n.jpg",
+        "765848710_1083998927385717_4795610692720437959_n.jpg",
+        "766106210_1927929144567813_3622934159886826113_n.jpg",
+        "767130154_2907223513009825_221062033940649439_n.jpg",
+        "767755485_1277671887673913_3129803557719233005_n.jpg",
+        "768246426_2265611874278925_345219678648096000_n.jpg",
+        "768703852_2506640909810880_7557945356006283015_n.jpg",
+        "769385138_4509280859207503_2812890985999726738_n.jpg",
+        "769412140_1680593473396323_3879847362348903517_n.jpg",
+        "769702441_1979070092798926_1245227238169640865_n.jpg",
+        "770329152_1323973769546991_7215932493748798458_n.jpg"
+      ]
+    },
+    {
+      "id": "may-29-2026.undergroundlounge",
+      "title": "Underground Lounge",
+      "location": "Chicago, IL",
+      "date": "May 29, 2026",
+      "shortDate": "May 29, 2026",
+      "thumb": "Images/PhotosAndVideos/Photos/2.UndergroundLounge.jpg",
+      "folder": "Images/PhotosAndVideos/PhotoAlbums/may-29-2026.undergroundlounge",
+      "files": [
+        "IMG_20260529_221535.jpg",
+        "IMG_20260529_221538.jpg",
+        "IMG_20260529_221540.jpg",
+        "IMG_20260529_221541.jpg",
+        "IMG_20260529_221543.jpg",
+        "IMG_20260529_221546.jpg",
+        "IMG_20260529_221548.jpg",
+        "received_974190248730284.jpg",
+        "Screenshot_20260529_221244_Messages.jpg"
+      ]
+    },
+    {
+      "id": "aug-29-2025.dumpsterphotos",
+      "title": "Dumpster Photos",
+      "location": "Des Plaines, IL",
+      "date": "August 29, 2025",
+      "shortDate": "Aug 29, 2025",
+      "thumb": "Images/PhotosAndVideos/Photos/1.Dumpster.png",
+      "folder": "Images/PhotosAndVideos/PhotoAlbums/aug-29-2025.dumpsterphotos",
+      "files": [
+        "20250829_175454.jpg",
+        "20250829_175520.jpg",
+        "20250829_175634.jpg",
+        "20250829_180119.jpg",
+        "20250829_180302.jpg",
+        "20250829_180321.jpg",
+        "20250829_180605.jpg",
+        "20250829_180613.jpg",
+        "20250829_180627.jpg",
+        "20250829_180644.jpg",
+        "20250829_180652.jpg",
+        "20250829_180838.jpg",
+        "20250829_180845.jpg",
+        "20250829_180854.jpg",
+        "20250829_180919.jpg",
+        "20250829_180930.jpg",
+        "20250829_180942.jpg",
+        "20250829_181008.jpg",
+        "20250829_181017.jpg"
+      ]
+    }
+  ],
+  "videos": [
+    {
+      "title": "Reggie's Music Joint",
+      "meta": "July 5, 2026 | Chicago, IL",
+      "href": "https://www.youtube.com/live/seMSH0fifdI?t=8475",
+      "thumb": "Images/PhotosAndVideos/Videos/1.Reggies.png",
+      "alt": "Glitched Out live performance preview"
+    }
+  ],
+  "discography": [
+    {
+      "title": "Full Lengths",
+      "scrollLabel": "full lengths",
+      "releases": []
+    },
+    {
+      "title": "EPs",
+      "scrollLabel": "EPs",
+      "releases": [
+        {
+          "title": "The Physical Properties of Standing Still",
+          "image": "Images/Discography/EPs/1.ThePhysicalPropertiesOfStandingStill.jpg",
+          "alt": "The Physical Properties of Standing Still cover",
+          "href": "Releases/EP.ThePhysicalPropertiesOfStandingStill/index.html"
+        }
+      ]
+    },
+    {
+      "title": "Singles",
+      "scrollLabel": "singles",
+      "releases": [
+        {
+          "title": "Covalence",
+          "image": "Images/Discography/Singles/1.Covalence.jpg",
+          "alt": "Covalence cover",
+          "href": "Releases/Single.Covalence/index.html"
+        }
+      ]
+    }
+  ]
+}

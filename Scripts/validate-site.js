@@ -4,13 +4,11 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const sourceExtensions = new Set([".html", ".css", ".js"]);
 const ignoredDirectories = new Set([".git", "Images", "Planning"]);
+const siteDataPath = path.join(root, "Data", "site-content.json");
 
 const htmlReferencePattern = /(?:src|href)="([^"]+)"/g;
 const cssUrlPattern = /url\(["']?([^"')]+)["']?\)/g;
-const jsPathPattern = /"((?:Images|CSS|JS|PhotoAlbums|Scripts|Releases)\/[^"?#]+\.[A-Za-z0-9]+)"/g;
-const albumPattern = /folder:\s*"([^"]+)"\s*,\s*files:\s*\[([\s\S]*?)\]/g;
-const photoAlbumsPattern = /const PHOTO_ALBUMS = \[([\s\S]*?)\];/;
-const albumIdPattern = /id:\s*"([^"]+)"/g;
+const jsPathPattern = /"((?:Images|CSS|JS|Data|PhotoAlbums|Scripts|Releases)\/[^"?#]+\.[A-Za-z0-9]+)"/g;
 
 function walk(directory) {
     return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -71,11 +69,89 @@ function existsWithExactCase(target) {
     return true;
 }
 
+function readSiteData() {
+    try {
+        return JSON.parse(fs.readFileSync(siteDataPath, "utf8"));
+    } catch (error) {
+        console.error(`Could not read or parse ${path.relative(root, siteDataPath)}: ${error.message}`);
+        process.exit(1);
+    }
+}
+
+function arrayFromData(data, camelCaseKey, constantKey) {
+    const value = data && (data[camelCaseKey] || data[constantKey]);
+
+    return Array.isArray(value) ? value : [];
+}
+
+function addReference(references, sourceFile, reference) {
+    if (typeof reference === "string" && reference.trim()) {
+        references.push({ sourceFile, reference });
+    }
+}
+
+function collectSiteDataReferences(references) {
+    const data = readSiteData();
+    const releases = arrayFromData(data, "releases", "RELEASES");
+    const shows = arrayFromData(data, "shows", "SHOWS");
+    const photoAlbums = arrayFromData(data, "photoAlbums", "PHOTO_ALBUMS");
+    const videos = arrayFromData(data, "videos", "VIDEOS");
+    const discography = arrayFromData(data, "discography", "DISCOGRAPHY");
+
+    for (const release of releases) {
+        addReference(references, siteDataPath, release.folder);
+        addReference(references, siteDataPath, release.artwork);
+
+        if (release.folder) {
+            addReference(references, siteDataPath, `${release.folder}/index.html`);
+        }
+
+        for (const track of Array.isArray(release.tracks) ? release.tracks : []) {
+            if (release.folder && track.file) {
+                addReference(references, siteDataPath, `${release.folder}/${track.file}`);
+            }
+        }
+
+        for (const link of Array.isArray(release.streamingLinks) ? release.streamingLinks : []) {
+            addReference(references, siteDataPath, link.href);
+        }
+    }
+
+    for (const show of shows) {
+        addReference(references, siteDataPath, show.tickets);
+    }
+
+    for (const album of photoAlbums) {
+        addReference(references, siteDataPath, album.thumb);
+        addReference(references, siteDataPath, album.folder);
+
+        if (album.id) {
+            addReference(references, siteDataPath, `PhotoAlbums/${album.id}.html`);
+        }
+
+        for (const fileName of Array.isArray(album.files) ? album.files : []) {
+            if (album.folder) {
+                addReference(references, siteDataPath, `${album.folder}/${fileName}`);
+            }
+        }
+    }
+
+    for (const video of videos) {
+        addReference(references, siteDataPath, video.href);
+        addReference(references, siteDataPath, video.thumb);
+    }
+
+    for (const section of discography) {
+        for (const release of Array.isArray(section.releases) ? section.releases : []) {
+            addReference(references, siteDataPath, release.image);
+            addReference(references, siteDataPath, release.href);
+        }
+    }
+}
+
 function collectReferences() {
     const references = [];
     const sourceFiles = walk(root);
-    const siteScript = path.join(root, "JS", "site.js");
-    const siteScriptText = fs.readFileSync(siteScript, "utf8");
 
     for (const sourceFile of sourceFiles) {
         const text = fs.readFileSync(sourceFile, "utf8");
@@ -98,27 +174,7 @@ function collectReferences() {
         }
     }
 
-    for (const match of siteScriptText.matchAll(albumPattern)) {
-        const folder = match[1];
-        const files = [...match[2].matchAll(/"([^"]+)"/g)].map((fileMatch) => fileMatch[1]);
-
-        references.push({ sourceFile: siteScript, reference: folder });
-
-        for (const fileName of files) {
-            references.push({ sourceFile: siteScript, reference: `${folder}/${fileName}` });
-        }
-    }
-
-    const photoAlbumsMatch = siteScriptText.match(photoAlbumsPattern);
-
-    if (photoAlbumsMatch) {
-        for (const match of photoAlbumsMatch[1].matchAll(albumIdPattern)) {
-            references.push({
-                sourceFile: siteScript,
-                reference: `PhotoAlbums/${match[1]}.html`,
-            });
-        }
-    }
+    collectSiteDataReferences(references);
 
     return references;
 }
