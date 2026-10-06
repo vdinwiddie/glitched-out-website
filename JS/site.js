@@ -56,44 +56,6 @@
     let DISCOGRAPHY = [];
     let ABOUT_MEMBERS = [];
 
-    const EXTRA_PHOTO_CARDS = [
-        {
-            title: "Feet Pics",
-            meta: "Jan 1, 1990 | Feet, FT",
-            href: "#",
-            thumb: "Images/PhotosAndVideos/Photos/4.Feet.jpg",
-            alt: "Feet Pics photo preview",
-        },
-        {
-            title: "Feet Pics Cont",
-            meta: "Feb 69, 1969 | ILove, FT",
-            href: "#",
-            thumb: "Images/PhotosAndVideos/Photos/5.Feet.jpg",
-            alt: "Feet Pics Cont photo preview",
-        },
-        {
-            title: "Feet Pics Cont Again",
-            meta: "Cum cum, 19cum | Cum, CM",
-            href: "#",
-            thumb: "Images/PhotosAndVideos/Photos/6.Feet.jpg",
-            alt: "Feet Pics Cont Again photo preview",
-        },
-        {
-            title: "God I Fuckin Love Feet",
-            meta: "feet feet, feet: Feet, FT",
-            href: "#",
-            thumb: "Images/PhotosAndVideos/Photos/7.Feet.jpg",
-            alt: "God I Fuckin Love Feet photo preview",
-        },
-        {
-            title: "Brb, Gonna Crank To These Feet",
-            meta: "feeeeeeeeeeeeeeeet",
-            href: "#",
-            thumb: "Images/PhotosAndVideos/Photos/8.Feet.jpg",
-            alt: "Brb, Gonna Crank To These Feet photo preview",
-        }
-    ];
-
     const entityMap = {
         "&": "&amp;",
         "<": "&lt;",
@@ -479,7 +441,7 @@
             });
         });
 
-        mount.innerHTML = albumCards.concat(EXTRA_PHOTO_CARDS.map(photoCardTemplate)).join("");
+        mount.innerHTML = albumCards.join("");
     }
 
     function videoCardTemplate(video) {
