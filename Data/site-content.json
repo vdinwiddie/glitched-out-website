@@ -1,4 +1,46 @@
-{
+ {
+  "aboutMembers": [
+    {
+      "name": "Minyong Yu",
+      "instrument": "Guitar / Vocals",
+      "image": "Images/AboutUs/1.Minyong_Yu.jpg",
+      "bio": [
+        "Min started playing in shitty punk bands during high school. He put his dreams on hold to pursue a career in medicine. Now that his professional life has reached a dead end he is dipping his toes back into punk rock debauchery. ",
+        "He credits his musical tastes to when his sister introduced him to The Offspring seminal album “Americana” with such hits as “pretty fly for a white guy” and “the kids aren’t alright”.",
+        "When he’s not playing in Glitched Out, you can find him living the boring suburban dad life with his wife and kids."
+      ]
+    },
+    {
+      "name": "Cody Michaels",
+      "instrument": "Lead Guitar / Backup Vocals",
+      "image": "Images/AboutUs/2.Cody_Michaels.jpg",
+      "bio": [
+        "Cody loves balls. He loves them more than anything. He loves big, sloppy balls in and around his mouth. If you present yours, he'll suck the nads right out of your Scrotum. That's how he got his nickname, Cody \"Scrotum Suckin' \" Michaels.",
+        "He discovered his love for balls when he saw some and decided to gobble em up one day. Ever since, he's been a sucking absolute sack all day every day.",
+        "On any given day you can find him throat deep, gnarfin' on a pair of sweaty danglers. His lifes' aspiration is to gargle on every sweaty, dangley, sloppy ball bag he can get his lips on."
+      ]
+    },
+    {
+      "name": "Vinnie Dinwiddie",
+      "instrument": "Drums / Backup Vocals",
+      "image": "Images/AboutUs/3.Vinnie_Dinwiddie.jpg",
+      "bio": [
+        "Vinnie started playing drums at six years old, developing an early connection to music that would eventually lead him to punk rock. In third grade, his brother Joe introduced him to \"There's a Problem\" by The Flatliners, and the song's fast, aggressive sound immediately hooked him.",
+        "At 20, Vinnie toured across the United States and Canada with his first band, Voice Of Addiction, gaining extensive experience on the road and behind the kit. He later became the long-term drummer for Butchered, recording a full-length album Wax Pathetic during his time with the band.",
+        "After years of playing in other projects, Vinnie decided to start something of his own, which eventually became Glitched Out. In addition to drums, he contributes heavily to the band's songwriting and helps keep things moving behind the scenes with booking, communication, social media, and other day-to-day band responsibilities."
+      ]
+    },
+    {
+      "name": "Holly Roach",
+      "instrument": "Bass / Vocals",
+      "image": "Images/AboutUs/4.Holly_Roach.jpg",
+      "bio": [
+        "Holly grew up surrounded by music, but it wasn't until the Be Brave Adventures that she had been challenging herself to take that would make her pick up her first bass in 2024.",
+        "After playing in adult groups through her kids' School of Rock, spending time with local punk band Rebels in Stereo, as well as filling in on bass periodically for various friends' projects, she has found herself at home with Glitched Out.",
+        "When she's not playing bass or managing family and home logistics, you can find her either painting, at a local show, or more likely at the nearest Alkaline Trio show, fangirling and shamelessly scream/singing along to every word."
+      ]
+    }
+  ],
   "releases": [
     {
       "id": "the-physical-properties-of-standing-still",
@@ -91,6 +133,12 @@
       "venue": "Kombucha Club",
       "location": "Chicago, IL",
       "tickets": "https://www.instagram.com/kombuchaclubchicago/"
+    },
+    {
+      "date": "November 27, 2026",
+      "venue": "Cubby Bear",
+      "location": "Chicago, IL",
+      "tickets": "https://www.instagram.com/mpshows/?hl=en"
     },
     {
       "date": "January 10, 2027",

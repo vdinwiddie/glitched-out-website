@@ -6,7 +6,7 @@ Official static website for Glitched Out.
 
 - `index.html`, `discography.html`, `shows.html`, `photosandvideos.html`, and `shop.html` are the main pages.
 - `PhotoAlbums/` contains the thin album page shells.
-- `Data/site-content.json` owns releases, shows, photo albums, videos, and discography data.
+- `Data/site-content.json` owns releases, shows, photo albums, videos, discography, and member bios (`aboutMembers`). Member photo files stay in `Images/AboutUs/`; their paths are stored in JSON.
 - `JS/site.js` owns shared templates, JSON data loading, header/footer rendering, album rendering, and carousel controls.
 - `CSS/style.css` owns global styles and shared components.
 - Page-specific CSS files in `CSS/` only cover page-specific layout and presentation.

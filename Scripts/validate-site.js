@@ -97,6 +97,11 @@ function collectSiteDataReferences(references) {
     const photoAlbums = arrayFromData(data, "photoAlbums", "PHOTO_ALBUMS");
     const videos = arrayFromData(data, "videos", "VIDEOS");
     const discography = arrayFromData(data, "discography", "DISCOGRAPHY");
+    const aboutMembers = arrayFromData(data, "aboutMembers", "ABOUT_MEMBERS");
+
+    for (const member of aboutMembers) {
+        addReference(references, siteDataPath, member.image);
+    }
 
     for (const release of releases) {
         addReference(references, siteDataPath, release.folder);

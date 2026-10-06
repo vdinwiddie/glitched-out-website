@@ -54,6 +54,7 @@
     let PHOTO_ALBUMS = [];
     let VIDEOS = [];
     let DISCOGRAPHY = [];
+    let ABOUT_MEMBERS = [];
 
     const EXTRA_PHOTO_CARDS = [
         {
@@ -91,39 +92,6 @@
             thumb: "Images/PhotosAndVideos/Photos/8.Feet.jpg",
             alt: "Brb, Gonna Crank To These Feet photo preview",
         }
-    ];
-
-    const ABOUT_MEMBERS = [
-        {
-            name: "Minyong Yu",
-            instrument: "Guitar / Vocals",
-            image: "Images/AboutUs/1.Minyong_Yu.jpg",
-            bio: [
-                "Min started playing in shitty punk bands during high school. He put his dreams on hold to pursue a career in medicine. Now that his professional life has reached a dead end he is dipping his toes back into punk rock debauchery. ",
-                "He credits his musical tastes to when his sister introduced him to The Offspring seminal album \“Americana\” with such hits as \“pretty fly for a white guy\” and \“the kids aren\’t alright\”.",
-                "When he’s not playing in Glitched Out, you can find him living the boring suburban dad life with his wife and kids."
-            ],
-        },
-        {
-            name: "Cody Michaels",
-            instrument: "Lead Guitar / Backup Vocals",
-            image: "Images/AboutUs/2.Cody_Michaels.jpg",
-            bio: [
-                "Cody loves balls. He loves them more than anything. He loves big, sloppy balls in and around his mouth. If you present yours, he'll suck the nads right out of your Scrotum. That's how he got his nickname, Cody \"Scrotum Suckin\' \" Michaels.",
-                "He discovered his love for balls when he saw some and decided to gobble em up one day. Ever since, he's been a sucking absolute sack all day every day.",
-                "On any given day you can find him throat deep, gnarfin' on a pair of sweaty danglers. His lifes' aspiration is to gargle on every sweaty, dangley, sloppy ball bag he can get his lips on."
-            ],
-        },
-        {
-            name: "Vinnie Dinwiddie",
-            instrument: "Drums / Backup Vocals",
-            image: "Images/AboutUs/3.Vinnie_Dinwiddie.jpg",
-            bio: [
-                "Vinnie started playing drums at six years old, developing an early connection to music that would eventually lead him to punk rock. In third grade, his brother Joe introduced him to \"There's a Problem\" by The Flatliners, and the song's fast, aggressive sound immediately hooked him.",
-                "At 20, Vinnie toured across the United States and Canada with his first band, Voice Of Addiction, gaining extensive experience on the road and behind the kit. He later became the long-term drummer for Butchered, recording a full-length album Wax Pathetic during his time with the band.",
-                "After years of playing in other projects, Vinnie decided to start something of his own, which eventually became Glitched Out. In addition to drums, he contributes heavily to the band's songwriting and helps keep things moving behind the scenes with booking, communication, social media, and other day-to-day band responsibilities.",
-            ],
-        },
     ];
 
     const entityMap = {
@@ -172,6 +140,7 @@
         PHOTO_ALBUMS = arrayFromData(data, "photoAlbums", "PHOTO_ALBUMS");
         VIDEOS = arrayFromData(data, "videos", "VIDEOS");
         DISCOGRAPHY = arrayFromData(data, "discography", "DISCOGRAPHY");
+        ABOUT_MEMBERS = arrayFromData(data, "aboutMembers", "ABOUT_MEMBERS");
     }
 
     function externalAttributes(href) {
@@ -1060,7 +1029,6 @@
         initializeMobileMenu();
         renderFooter();
         renderDividers();
-        renderAboutMembers();
 
         try {
             await loadSiteContent();
@@ -1071,6 +1039,7 @@
         const album = currentAlbum();
         const release = currentRelease();
 
+        renderAboutMembers();
         renderLatestRelease();
         renderStreamingLinks();
         renderShows();
